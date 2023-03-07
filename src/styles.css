@@ -5,22 +5,27 @@
 }
 
 #top-container {
-    width: 100%;
-    height: 100%;
+    /* set height and width to entire screen */
+    height: 100vh;
+    width: 100vw;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    font-family: 'Roboto', sans-serif;
+    background-color: beige;
 }
 
-#top-container #instructions {
+#top-container #instructions,
+    #top-container #form {
         height: 100%;
+        flex: 1;
     }
 
 #top-container #content-container {
         height: 100%;
         width: 500px;
-    }
 
-#top-container #form {
-        height: 100%;
+        background-color: white;
     }

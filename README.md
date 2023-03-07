@@ -1,9 +1,31 @@
 # human-computer-interaction
 Repo for Human Computer Interaction code @ VU
 
-## Install and usage
-To get started, first do `npm install` to setup the project for the first time
-and then do `npm run build` to compile the `postcss/styles.css` file to 
-`src/styles.css` or alternatively use `npm run watch` to have the `postcss/styles.css`
-autocompile when it changes.  
-Use the Live Server extension to test it locally
+## Installation and running the project
+To install the needed dependecies the first timedo `npm install` to setup the 
+project for the first time.  
+Then you can do `npm run build` to compile the `postcss/styles.css` file to 
+`src/styles.css` or alternatively use `npm run watch` to have the 
+`postcss/styles.css` autocompile when the file changes.  
+I recommend installing the following extensions for vscode:
+* **PostCSS Language Support**, otherwise the `styles.css` will give you errors
+*(nested tags will look a bit weird with syntax highlighting)*
+* **Live Server**, to host the website locally *(start on index.html)*
+
+## Editing your page
+Any HTML for your page can be put inside the html file with your page name that
+is in `src/pages/`, any javascript you need for your page can be put in the js
+file with your page name.  
+The `src/pages/` currently only has the `hello` and `world` pages to show 
+example execution from one page to another, but you can just add your own page
+files and add that to the pages array in `src/index.js` 
+(like `'pages/pagenamehere'`).  
+Some options for subpages:
+* Use Zain's method from the lo-fi project, having different div's in the same
+html that you hide or show using javascript.
+* create a new html and javascript file for this subpage and add it to the pages
+array in `src/index.js`.
+* probably some other ways, just message in the discord chat
+
+Ofcourse, if you have any questions about this *special* solution ask away in
+the discord chat.
