@@ -27,5 +27,5 @@ html that you hide or show using javascript.
 array in `src/index.js`.
 * probably some other ways, just message in the discord chat
 
-Ofcourse, if you have any questions about this *special* solution ask away in
+Of course, if you have any questions about this *special* solution ask away in
 the discord chat.
