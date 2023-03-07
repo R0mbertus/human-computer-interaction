@@ -1,0 +1,17 @@
+{
+  "name": "fitness-app",
+  "version": "1.0.0",
+  "description": "yep",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss postcss/styles.css -o src/styles.css"
+  },
+  "author": "Team 42",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-preset-env": "^8.0.1"
+  }
+}
