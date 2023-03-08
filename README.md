@@ -16,8 +16,8 @@ I recommend installing the following extensions for vscode:
 Any HTML for your page can be put inside the html file with your page name that
 is in `src/pages/`, any javascript you need for your page can be put in the js
 file with your page name.  
-The `src/pages/` currently only has the `hello` and `world` pages to show 
-example execution from one page to another, but you can just add your own page
+The `src/pages/` ~~currently only has the `hello` and `world` pages to show 
+example execution from one page to another,~~ but you can just add your own page
 files and add that to the pages array in `src/index.js` 
 (like `'pages/pagenamehere'`). Any css editing can be done in the 
 `postcss/styles.css`, just create a selector of your id and put all your page 

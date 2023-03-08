@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // change this index to the index of your page to get yours to load first
-    loadPage(0);
+    loadPage("logo");
 });
-
-// all the different pages in our app (add yours here)
-const pages = [
-    "pages/hello",
-    "pages/world"
-]
 
 // a function to load insert a html page into the #content-container and load
 // the javascript file for that html page
-function loadPage(index) {
-    const element = document.querySelector("#content-container");
-    fetch(`${pages[index]}.html`)
+function loadPage(pageName) {
+    const element = document.querySelector("#page-container");
+    fetch(`pages/${pageName}.html`)
         .then(response => response.text())
         .then(data => {
             element.innerHTML = data;
         });
     
+    //first remove the old pages script
+    let oldScript;
+    if ((oldScript = document.querySelector("#page-script"))) {
+        document.head.removeChild(oldScript);
+    }
+
     const script = document.createElement("script");
-    script.src = `${pages[index]}.js`;
+    script.src = `pages/${pageName}.js`;
+    script.id = "page-script";
     document.head.appendChild(script);
 }
 
