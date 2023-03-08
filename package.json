@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss postcss/styles.css -o src/styles.css",
-    "watch": "postcss postcss/styles.css -o src/styles.css --watch"
+    "build": "postcss postcss/styles.css -o docs/styles.css",
+    "watch": "postcss postcss/styles.css -o docs/styles.css --watch"
   },
   "author": "Team 42",
   "license": "ISC",
