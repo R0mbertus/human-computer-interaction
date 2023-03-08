@@ -81,15 +81,13 @@ isElementLoaded("#info").then((info) => {
     info.appendChild(info_form);
 
     function saveInfo() {
-        information = {
-            pic: document.querySelector("#pic").value,
-            name: document.querySelector("#name").value,
-            dateofbirth: document.querySelector("#dateofbirth").value,
-            height: document.querySelector("#height").value,
-            height_unit: document.querySelector(`input[name="height-unit"]:checked`).value,
-            weight: document.querySelector("#weight").value,
-            weight_unit: document.querySelector(`input[name="weight-unit"]:checked`).value,
-        }
+        information.pic = document.querySelector("#pic").value;
+        information.name = document.querySelector("#name").value;
+        information.dateofbirth = document.querySelector("#dateofbirth").value;
+        information.height = document.querySelector("#height").value;
+        information.height_unit = document.querySelector(`input[name="height-unit"]:checked`).value;
+        information.weight = document.querySelector("#weight").value;
+        information.weight_unit = document.querySelector(`input[name="weight-unit"]:checked`).value;
     }
 
     function addRadios(div, value1, value2, measurement) {
