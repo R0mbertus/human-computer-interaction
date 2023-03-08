@@ -6,16 +6,7 @@ isElementLoaded("#settings").then((settings) => {
 
     let greeting = document.createElement("p");
     greeting.id = "greeting";
-
-    isElementLoaded("#profile-pic").then((image) => {
-        if (information.pic != "") {
-            image.src = information.pic;
-        }
-        else {
-            image.src = "images/default-profile.jpeg";
-        }
-    });
-
+    
     let settings_form = getInfoForm();
 
     const store = document.createElement("button");
