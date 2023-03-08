@@ -11,11 +11,13 @@ isElementLoaded("#navbar").then(() => {
 });
 
 function navbarClicked(pageName) {
-    const selected = document.querySelector(`#navbar-${pageName}`);
-    for (const button of buttons) {
-        const element = document.querySelector(`#navbar-${button}`);
-        element.className = "";
+    if (document.querySelector(`#${pageName}`) === null) {
+        const selected = document.querySelector(`#navbar-${pageName}`);
+        for (const button of buttons) {
+            const element = document.querySelector(`#navbar-${button}`);
+            element.className = "";
+        }
+        selected.className = "selected";
+        loadPage(pageName)
     }
-    selected.className = "selected";
-    loadPage(pageName)
 }
