@@ -107,14 +107,47 @@ function getInfoForm() {
 
     isElementLoaded("#height-div").then((height_div) => {
         height_div.querySelector("input").min = 0;
-        addRadios(height_div, "cm", "inches", "height")
+        (addRadios("cm", "inches", "height")).forEach((e)=>height_div.appendChild(e));
     })
 
     isElementLoaded("#weight-div").then((weight_div) => {
         weight_div.querySelector("input").min = 0;
-        addRadios(weight_div, "kg", "pounds", "weight")
+        (addRadios("kg", "pounds", "weight")).forEach((e)=>weight_div.appendChild(e));
     })
     return info_form;
+    
+    function addRadios(value1, value2, measurement) {
+        let input1 = document.createElement("input");
+    
+        let name = `${measurement}-unit`;
+    
+        input1.type = "radio";
+        input1.id = value1;
+        input1.name = name;
+        input1.value = value1;
+        input1.required = true;
+    
+        let label1 = document.createElement("label")
+        label1.setAttribute("for", name);
+        label1.innerHTML = value1;
+    
+        let input2 = document.createElement("input");
+        input2.type = "radio";
+        input2.id = value2
+        input2.name = name;
+        input2.value = value2
+    
+        let label2 = document.createElement("label")
+        label2.setAttribute("for", name);
+        label2.innerHTML = value2
+    
+        if (information[`${measurement}_unit`] == value1) {
+            input1.checked = true;
+        } else {
+            input2.checked = true;
+        }
+        return [input1, label1, input2, label2];
+    }
 }
 
 function saveInfo() {
@@ -127,38 +160,3 @@ function saveInfo() {
     information.weight_unit = document.querySelector(`input[name="weight-unit"]:checked`).value;
 }
 
-function addRadios(div, value1, value2, measurement) {
-    let input1 = document.createElement("input");
-
-    let name = `${measurement}-unit`;
-
-    input1.type = "radio";
-    input1.id = value1;
-    input1.name = name;
-    input1.value = value1;
-    input1.required = true;
-
-    let label1 = document.createElement("label")
-    label1.setAttribute("for", name);
-    label1.innerHTML = value1;
-
-    let input2 = document.createElement("input");
-    input2.type = "radio";
-    input2.id = value2
-    input2.name = name;
-    input2.value = value2
-
-    let label2 = document.createElement("label")
-    label2.setAttribute("for", name);
-    label2.innerHTML = value2
-
-    if (information[`${measurement}_unit`] == value1) {
-        input1.checked = true;
-    } else {
-        input2.checked = true;
-    }
-    div.appendChild(input1);
-    div.appendChild(label1);
-    div.appendChild(input2);
-    div.appendChild(label2);
-}
