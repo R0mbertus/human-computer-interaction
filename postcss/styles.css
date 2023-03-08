@@ -47,6 +47,14 @@
         height: 100%;
         flex: 1;
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 80%;
+        }
+        
         border: 1px solid darkgray;
     }
 
@@ -58,6 +66,7 @@
     .selected {
         background-color: gray;
     }
+    
 }
 
 

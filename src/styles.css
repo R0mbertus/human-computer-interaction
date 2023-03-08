@@ -42,14 +42,26 @@
     display: flex;
     justify-content: space-around;
     align-items: space-between;
+    
 }
 
 #navbar div {
         height: 100%;
         flex: 1;
 
-        border: 1px solid darkgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+#navbar div img {
+            height: 80%;
+        }
+
+#navbar div {
+        
+        border: 1px solid darkgray;
+}
 
 /* for some reason doesn't work nested with previous */
 
