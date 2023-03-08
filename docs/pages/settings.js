@@ -3,19 +3,7 @@ var ids = ["pic", "name", "dateofbirth", "height", "weight"];
 var labels = ["Profile Pic", "Name", "DoB", "Height", "Weight"];
 
 isElementLoaded("#settings").then((settings) => {
-
-    isElementLoaded("#greeting").then((greeting) => {
-        greeting.appendChild(document.createTextNode(`Hello, ${information.name}!`));
-    });
-    
-    isElementLoaded("#profile-pic").then((image) => {
-        if (information.pic != "") {
-            image.src = information.pic;
-        }
-        else {
-            image.src = "images/default-profile.jpeg";
-        }
-    });
+    imageAndGreet();
 
     isElementLoaded("#settings-form").then((form) => {
         for (var i = 0; i < types.length; i++) {
@@ -91,12 +79,26 @@ isElementLoaded("#settings").then((settings) => {
             if (form.checkValidity()) {
                 e.preventDefault();
                 saveInfo();
-                settings.innerHTML = "";
-                loadPage("settings");
+                imageAndGreet();
             }
         });
     });
 });
+
+function imageAndGreet() {
+    isElementLoaded("#greeting").then((greeting) => {
+        greeting.textContent = `Hello, ${information.name}!`;
+    });
+    
+    isElementLoaded("#profile-pic").then((image) => {
+        if (information.pic != "") {
+            image.src = information.pic;
+        }
+        else {
+            image.src = "images/default-profile.jpeg";
+        }
+    });
+}
 
 function addRadios(div, value1, value2, measurement) {
     var input1 = document.createElement("input");

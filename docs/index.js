@@ -13,16 +13,9 @@ function loadPage(pageName) {
             element.innerHTML = data;
         });
 
-    //first remove the old pages script
-    let oldScript;
-    if ((oldScript = document.querySelector("#page-script"))) {
-        document.head.removeChild(oldScript);
-    }
-
     const script = document.createElement("script");
     script.src = `pages/${pageName}.js`;
-    script.id = "page-script";
-    document.head.appendChild(script);
+    element.appendChild(script);
 }
 
 // this function keeps checking if an element exists and returns that element
