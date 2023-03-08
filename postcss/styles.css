@@ -234,7 +234,7 @@
     align-items: center;
 
     * {
-        margin: 1.2vh 0;
+        margin: 1.5vh 0;
         font-size: 3vh;
     }
 
@@ -252,7 +252,8 @@
         width: 80%; 
         font-size: 3vh;
 
-        div {
+        > div {
+            margin: 0;
             display: flex;
 
             label:first-child {
@@ -268,13 +269,15 @@
             }
             
             input[type="radio"] {
-                padding: 1vh;
+                margin-left: 0.5vw;
+                width: 5%;
             } 
         }
         
         button {
             width: 100%;
             font-size: 3vh;
+            margin-bottom: 1vh;
         }
     }
 }

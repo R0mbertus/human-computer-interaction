@@ -6,9 +6,12 @@ isElementLoaded("#settings").then((settings) => {
     const greeting = document.querySelector("#greeting");
     greeting.appendChild(document.createTextNode(`Hello, ${information.name}!`));
     
+    const image = settings.querySelector("img");
     if (information.pic != "") {
-        const image = settings.querySelector("img");
         image.src = information.pic;
+    }
+    else {
+        image.src = "images/default-profile.jpeg";
     }
     
     isElementLoaded("#settings-form").then((form) => {
@@ -30,9 +33,9 @@ isElementLoaded("#settings").then((settings) => {
             form.appendChild(div);
         }
 
-        isElementLoaded("#url").then((url_input) => {
+        isElementLoaded("#pic").then((url_input) => {
             url_input.value = information.pic;
-            url_input.required = false;
+            url_input.removeAttribute("required");
         });
 
         isElementLoaded("#name").then((name_input) => {
@@ -41,21 +44,39 @@ isElementLoaded("#settings").then((settings) => {
     
         isElementLoaded("#dateofbirth-div").then((date_div) => {
             date_div.firstElementChild.innerHTML = '<abbr title="Date of Birth">DoB</abbr>'
+
+            const today = new Date();
+
+            // Calculate a date that is 100 years ago
+            const minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
+            const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+            // Format the date as yyyy-mm-dd
+            const formattedMinDate = minDate.toISOString().split('T')[0];
+            const formattedMaxDate = maxDate.toISOString().split('T')[0];
+
+            // Set the min and max attributes of the date input to the formatted dates
+            document.getElementById('dateofbirth').setAttribute('min', formattedMinDate);
+            document.getElementById('dateofbirth').setAttribute('max', formattedMaxDate);
+
             date_div.querySelector("input").value = information.dateofbirth;
         });
     
         isElementLoaded("#height-div").then((height_div) => {
             const height = height_div.querySelector("input");
             height.min = 0;
-            height.value = information.value;
+            height.value = information.height;
             addRadios(height_div, "cm", "inches", "height");
+            document.querySelector(`#${information.height_unit}`).checked = true;
+
         });
         
         isElementLoaded("#weight-div").then((weight_div) => {
             const weight = weight_div.querySelector("input");
             weight.min = 0;
-            weight.value = information.value;
+            weight.value = information.weight;
             addRadios(weight_div, "kg", "pounds", "weight");
+            document.querySelector(`#${information.weight_unit}`).checked = true;
         });
 
         const store = document.createElement("button");
@@ -80,7 +101,6 @@ function addRadios(div, value1, value2, measurement) {
     input1.name = `${measurement}-unit`;
     input1.value = value1;
     input1.required = true;
-    input1.checked = true;
     var label1 = document.createElement("label")
     label1.setAttribute("for", `${measurement}-unit`);
     label1.innerHTML = value1;

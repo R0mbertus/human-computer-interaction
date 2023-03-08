@@ -215,7 +215,7 @@
 }
 
 #settings * {
-        margin: 1.2vh 0;
+        margin: 1.5vh 0;
         font-size: 3vh;
     }
 
@@ -234,27 +234,30 @@
         font-size: 3vh;
     }
 
-#settings form div {
+#settings form > div {
+            margin: 0;
             display: flex; 
         }
 
-#settings form div label:first-child {
+#settings form > div label:first-child {
                 width: 35%;
             }
 
-#settings form div input {
+#settings form > div input {
                 width: 65%;
             }
 
-#settings form div input[type="number"] {
+#settings form > div input[type="number"] {
                 width: 20%;
             }
 
-#settings form div input[type="radio"] {
-                padding: 1vh;
+#settings form > div input[type="radio"] {
+                margin-left: 0.5vw;
+                width: 5%;
             }
 
 #settings form button {
             width: 100%;
             font-size: 3vh;
+            margin-bottom: 1vh;
         }
