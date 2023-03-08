@@ -12,7 +12,7 @@ function loadPage(pageName) {
         .then(data => {
             element.innerHTML = data;
         });
-    
+
     //first remove the old pages script
     let oldScript;
     if ((oldScript = document.querySelector("#page-script"))) {
@@ -31,9 +31,8 @@ async function isElementLoaded(element) {
     while (document.querySelector(element) === null) {
         await new Promise(resolve => requestAnimationFrame(resolve));
     }
-    return document.querySelector(element); 
+    return document.querySelector(element);
 };
-
 
 // Global variables
 var account = {
@@ -46,9 +45,9 @@ var information = {
     name: "",
     dateofbirth: "",
     height: "",
-    height_unit: "",
+    height_unit: "cm",
     weight: "",
-    weight_unit: "",
+    weight_unit: "kg",
 }
 
 var goals = {
