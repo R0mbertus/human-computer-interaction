@@ -33,3 +33,19 @@ async function isElementLoaded(element) {
     }
     return document.querySelector(element); 
 };
+
+
+// Global variables
+var account = {
+    email: "",
+    password: ""
+}
+
+var information = {
+    name: "",
+    dateofbirth: "",
+    height_value: "",
+    height_unit: "",
+    weight_value: "",
+    weight_unit: "",
+}

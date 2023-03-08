@@ -1,7 +1,4 @@
 isElementLoaded("#signup").then((signup) => {
-    isElementLoaded("#logo-button").then((element) => {
-    });
-
     let img = document.createElement("img");
     img.src = "images/logo.png"
     img.alt = "App logo"
@@ -13,6 +10,7 @@ isElementLoaded("#signup").then((signup) => {
     email_input.id = "email";
     email_input.placeholder = "Email";
     email_input.required = true;
+    email_input.value = account.email;
 
     let password_input = document.createElement("input")
     password_input.type = "password";
@@ -20,6 +18,7 @@ isElementLoaded("#signup").then((signup) => {
     password_input.placeholder = "Password"
     password_input.minLength = 8;
     password_input.required = true;
+    password_input.value = account.password;
 
     let signup_button = document.createElement("button");
     signup_button.id = "signup-button";
@@ -41,8 +40,3 @@ isElementLoaded("#signup").then((signup) => {
     signup.appendChild(img);
     signup.appendChild(signup_form);
 })
-
-let account = {
-    email: "",
-    password: ""
-}
