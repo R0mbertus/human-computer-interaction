@@ -3,17 +3,20 @@ var ids = ["pic", "name", "dateofbirth", "height", "weight"];
 var labels = ["Profile Pic", "Name", "DoB", "Height", "Weight"];
 
 isElementLoaded("#settings").then((settings) => {
-    const greeting = document.querySelector("#greeting");
-    greeting.appendChild(document.createTextNode(`Hello, ${information.name}!`));
+
+    isElementLoaded("#greeting").then((greeting) => {
+        greeting.appendChild(document.createTextNode(`Hello, ${information.name}!`));
+    });
     
-    const image = settings.querySelector("img");
-    if (information.pic != "") {
-        image.src = information.pic;
-    }
-    else {
-        image.src = "images/default-profile.jpeg";
-    }
-    
+    isElementLoaded("#profile-pic").then((image) => {
+        if (information.pic != "") {
+            image.src = information.pic;
+        }
+        else {
+            image.src = "images/default-profile.jpeg";
+        }
+    });
+
     isElementLoaded("#settings-form").then((form) => {
         for (var i = 0; i < types.length; i++) {
             var div = document.createElement("div");
@@ -88,6 +91,7 @@ isElementLoaded("#settings").then((settings) => {
             if (form.checkValidity()) {
                 e.preventDefault();
                 saveInfo();
+                settings.innerHTML = "";
                 loadPage("settings");
             }
         });
