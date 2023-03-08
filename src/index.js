@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // change this index to the index of your page to get yours to load first
-    loadPage("logo");
+    loadPage("signup");
 });
 
 // a function to load insert a html page into the #content-container and load
