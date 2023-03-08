@@ -66,6 +66,7 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     
     img {
         height: 50vh;
@@ -110,7 +111,7 @@
     h2 {
         margin-top: 5vw;
         font-size: 5vh;
-        width: 80%;
+        width: 90%;
         text-align: center;
     }
 
@@ -149,5 +150,73 @@
             margin-top: 5vh;
             font-size: 3vh;
         }
+    }
+}
+
+/* Goals Page styling */
+
+#goal {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+
+    h2 {
+        margin-top: 5vw;
+        font-size: 4vh;
+        width: 90%;
+        text-align: center;
+    }
+
+    form {
+        width: 80%;
+        margin: 10vh 0; 
+        font-size: 3vh;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+            margin: 4vh 0;
+
+            * {
+                font-size: 3vh;
+            }
+
+            label {
+                margin-left: 1vh;
+            }
+            
+            input[type="number"] {
+                width: 30%;
+            }
+            
+            > :first-child {
+                width: 70%;
+            }
+            
+            >:last-child {
+                width: 30%;
+                #weight {
+                    width: 100%;
+                }
+            }
+            p {
+                text-align: right;
+            }
+        }
+
+        button {
+            width: 100%;
+            margin-top: 5vh;
+            font-size: 3vh;
+        }
+
     }
 }

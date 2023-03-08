@@ -1,7 +1,7 @@
 isElementLoaded("#info").then((info) => {
 
     let types = ["url", "text", "date", "number", "number"]
-    let ids = ["pic", "name", "date", "height", "weight"]
+    let ids = ["pic", "name", "dateofbirth", "height", "weight"]
     let labels = ["Profile Pic", "Name", "DoB", "Height", "Weight"]
 
     let back_button = document.createElement("button");
@@ -22,16 +22,21 @@ isElementLoaded("#info").then((info) => {
     // profile_pic.type = "url";
     // info_form.appendChild(profile_pic);
 
-    for (let i = 0; i < types.length; i++) {
+    for (let i = 0; i < ids.length; i++) {
         let div = document.createElement("div");
         div.id = `${ids[i]}-div`
+
         let label = document.createElement("label")
         label.setAttribute("for", ids[i]);
         label.innerHTML = labels[i];
+        
         let input = document.createElement("input");
         input.type = types[i];
         input.id = ids[i];
         input.required = true;
+       
+        input.value = information[ids[i]]
+
         div.appendChild(label);
         div.appendChild(input);
         info_form.appendChild(div);
@@ -43,7 +48,7 @@ isElementLoaded("#info").then((info) => {
         pic_input.required = false;
     })
 
-    isElementLoaded("#date-div").then((date_div) => {
+    isElementLoaded("#dateofbirth-div").then((date_div) => {
         date_div.firstElementChild.innerHTML = '<abbr title="Date of Birth">DoB</abbr>'
     })
 
@@ -79,10 +84,10 @@ isElementLoaded("#info").then((info) => {
         information = {
             pic: document.querySelector("#pic").value,
             name: document.querySelector("#name").value,
-            dateofbirth: document.querySelector("#date").value,
-            height_value: document.querySelector("#height").value,
+            dateofbirth: document.querySelector("#dateofbirth").value,
+            height: document.querySelector("#height").value,
             height_unit: document.querySelector(`input[name="height-unit"]:checked`).value,
-            weight_value: document.querySelector("#weight").value,
+            weight: document.querySelector("#weight").value,
             weight_unit: document.querySelector(`input[name="weight-unit"]:checked`).value,
         }
     }

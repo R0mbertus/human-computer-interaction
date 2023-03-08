@@ -42,11 +42,19 @@ var account = {
 }
 
 var information = {
-    url: "",
+    pic: "",
     name: "",
     dateofbirth: "",
-    height_value: "",
+    height: "",
     height_unit: "",
-    weight_value: "",
+    weight: "",
     weight_unit: "",
+}
+
+var goals = {
+    checked: [false, false, false, false],
+    steps: "",
+    minutes: "",
+    calories: "",
+    weight: ""
 }

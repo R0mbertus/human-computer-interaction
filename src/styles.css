@@ -67,6 +67,7 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 #signup img {
         height: 50vh;
@@ -106,7 +107,7 @@
 #info h2 {
         margin-top: 5vw;
         font-size: 5vh;
-        width: 80%;
+        width: 90%;
         text-align: center;
     }
 #info form {
@@ -134,6 +135,76 @@
                 margin-left: 2vh;
             }
 #info form button {
+            width: 100%;
+            margin-top: 5vh;
+            font-size: 3vh;
+        }
+
+/* Goals Page styling */
+
+#goal {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#goal #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+
+#goal h2 {
+        margin-top: 5vw;
+        font-size: 4vh;
+        width: 90%;
+        text-align: center;
+    }
+
+#goal form {
+        width: 80%;
+        margin: 10vh 0; 
+        font-size: 3vh;
+
+    }
+
+#goal form > div {
+            display: flex;
+            justify-content: space-between;
+            margin: 4vh 0;
+        }
+
+#goal form > div * {
+                font-size: 3vh;
+            }
+
+#goal form > div label {
+                margin-left: 1vh;
+            }
+
+#goal form > div input[type="number"] {
+                width: 30%;
+            }
+
+#goal form > div > :first-child {
+                width: 70%;
+            }
+
+#goal form > div >:last-child {
+                width: 30%;
+            }
+
+#goal form > div >:last-child #weight {
+                    width: 100%;
+                }
+
+#goal form > div p {
+                text-align: right;
+            }
+
+#goal form button {
             width: 100%;
             margin-top: 5vh;
             font-size: 3vh;
