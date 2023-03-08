@@ -42,6 +42,7 @@ var account = {
 }
 
 var information = {
+    url: "",
     name: "",
     dateofbirth: "",
     height_value: "",

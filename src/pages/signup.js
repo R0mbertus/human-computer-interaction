@@ -31,12 +31,13 @@ isElementLoaded("#signup").then((signup) => {
     signup_button.addEventListener('click', (e) => {
         if (signup_form.checkValidity()) {
             e.preventDefault();
-            account.email = email_input.value;
-            account.password = password_input.value;
+            account = {
+                email: email_input.value,
+                password: password_input.value
+            }
             loadPage("info");
         }
     });
-
     signup.appendChild(img);
     signup.appendChild(signup_form);
 })

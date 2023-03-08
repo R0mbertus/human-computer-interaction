@@ -92,3 +92,62 @@
         }
     }
 }
+
+/* Info page Styling */
+#info {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+
+    h2 {
+        margin-top: 5vw;
+        font-size: 5vh;
+        width: 80%;
+        text-align: center;
+    }
+
+    form {
+        width: 80%;
+        margin: 10vh 0; 
+        font-size: 3vh;
+
+        div {
+            display: flex;
+            margin: 3vh 0;
+
+            * {
+                font-size: 3vh;
+            }
+
+            label:first-child {
+                width: 35%;
+            }
+
+            input[type="url"], input[type="text"], input[type="date"] {
+                width: 65%;
+            }
+
+            input[type="number"] {
+                width: 20%;
+            }
+            
+            input[type="radio"] {
+                margin-left: 2vh;
+            } 
+        }
+        
+        button {
+            width: 100%;
+            margin-top: 5vh;
+            font-size: 3vh;
+        }
+    }
+}

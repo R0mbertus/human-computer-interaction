@@ -89,3 +89,52 @@
             margin: 2vh 0;
             font-size: 3vh;
         }
+
+/* Info page Styling */
+#info {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#info #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+#info h2 {
+        margin-top: 5vw;
+        font-size: 5vh;
+        width: 80%;
+        text-align: center;
+    }
+#info form {
+        width: 80%;
+        margin: 10vh 0; 
+        font-size: 3vh;
+    }
+#info form div {
+            display: flex;
+            margin: 3vh 0; 
+        }
+#info form div * {
+                font-size: 3vh;
+            }
+#info form div label:first-child {
+                width: 35%;
+            }
+#info form div input[type="url"], #info form div input[type="text"], #info form div input[type="date"] {
+                width: 65%;
+            }
+#info form div input[type="number"] {
+                width: 20%;
+            }
+#info form div input[type="radio"] {
+                margin-left: 2vh;
+            }
+#info form button {
+            width: 100%;
+            margin-top: 5vh;
+            font-size: 3vh;
+        }
