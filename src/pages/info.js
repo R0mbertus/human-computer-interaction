@@ -18,10 +18,6 @@ isElementLoaded("#info").then((info) => {
 
     let info_form = document.createElement("form");
 
-    // let profile_pic = document.createElement("input");
-    // profile_pic.type = "url";
-    // info_form.appendChild(profile_pic);
-
     for (let i = 0; i < ids.length; i++) {
         let div = document.createElement("div");
         div.id = `${ids[i]}-div`
@@ -29,12 +25,12 @@ isElementLoaded("#info").then((info) => {
         let label = document.createElement("label")
         label.setAttribute("for", ids[i]);
         label.innerHTML = labels[i];
-        
+
         let input = document.createElement("input");
         input.type = types[i];
         input.id = ids[i];
         input.required = true;
-       
+
         input.value = information[ids[i]]
 
         div.appendChild(label);
@@ -50,13 +46,28 @@ isElementLoaded("#info").then((info) => {
 
     isElementLoaded("#dateofbirth-div").then((date_div) => {
         date_div.firstElementChild.innerHTML = '<abbr title="Date of Birth">DoB</abbr>'
+
+        // Get today's date
+        const today = new Date();
+
+        // Calculate a date that is 100 years ago
+        const minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
+        const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+
+        // Format the date as yyyy-mm-dd
+        const formattedMinDate = minDate.toISOString().split('T')[0];
+        const formattedMaxDate = maxDate.toISOString().split('T')[0];
+
+        // Set the min and max attributes of the date input to the formatted dates
+        document.getElementById('dateofbirth').setAttribute('min', formattedMinDate);
+        document.getElementById('dateofbirth').setAttribute('max', formattedMaxDate);
     })
 
     isElementLoaded("#height-div").then((height_div) => {
         height_div.querySelector("input").min = 0;
         addRadios(height_div, "cm", "inches", "height")
     })
-    
+
     isElementLoaded("#weight-div").then((weight_div) => {
         weight_div.querySelector("input").min = 0;
         addRadios(weight_div, "kg", "pounds", "weight")
