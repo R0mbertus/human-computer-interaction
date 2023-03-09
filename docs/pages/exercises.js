@@ -1,7 +1,7 @@
 isElementLoaded("#video-container").then((videoContainer) => {
-    var types = ["abdominals", "biceps", "glutes", "hamstrings", "biceps",];
+    var muscleTypes = ["abdominals", "biceps", "glutes", "hamstrings", "biceps",];
     var videoIDs = ["3oeimlA6s68", "KzZILhT_YvY", "Q5VSWvZibpQ", "N9_11gKQGqM", "gThC40XCHd4",];
-    var descriptions = [
+    var videoDescriptions = [
         `No equipment needed for this 20 minute at home abs workout.
         These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced
         routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,
@@ -19,28 +19,26 @@ isElementLoaded("#video-container").then((videoContainer) => {
         dumbbells.`,
     ];
 
-    for (const type in types) {
+    for (const index in muscleTypes) {
         const videoDiv = document.createElement("div");
-        videoDiv.classList.add("video", types[type]);
+        videoDiv.classList.add("video", muscleTypes[index]);
         videoDiv.innerHTML = `
-            <image src="https://img.youtube.com/vi/${videoIDs[type]}/hqdefault.jpg" alt="Video Thumbnail"</image>
-            <p>${descriptions[type]}</p>
+            <image src="https://img.youtube.com/vi/${videoIDs[index]}/hqdefault.jpg" alt="Video Thumbnail"</image>
+            <p>${videoDescriptions[index]}</p>
         `;
         videoContainer.appendChild(videoDiv);
     }
 
-    const select = document.getElementById('muscles');
+    const filter = document.getElementById('muscles');
     const videos = document.querySelectorAll('.video');
 
-    select.addEventListener('change', function() {
+    filter.addEventListener('change', function() {
         if (this.value != '') {
             videos.forEach((video) => {
                 video.style.display = 'none';
             });
 
-            console.log(this.value)
             const selectedVideos = document.querySelectorAll(`.${this.value}`);
-            console.log(selectedVideos);
             selectedVideos.forEach((video) => {
                 video.style.display = "flex";
             })

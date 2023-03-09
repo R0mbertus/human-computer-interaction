@@ -248,31 +248,60 @@
         margin-bottom: 2vh;
     }
 
-    #video-container {
-        overflow-y: scroll;
+    .filter {
+        font-size: 2vh;
+
+        select {
+            font-size: 2vh;
+        }
     }
 
-    .video {
-        width: 90%;
+    #video-container {
+        overflow-y: scroll;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        margin-right: 2vw;
 
-        p {
-            font-size: 1.2vh;
-            margin-top: 2vh;
-            text-align: justify;
+        .video {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 1vh 0.5vw;
+            padding: 1vh 0.5vw;
+    
+            p {
+                font-size: 1.3vh;
+                text-align: justify;
+                padding-left: 1vw;
+            }
+    
+            img {
+                height: 10vh; 
+                aspect-ratio: 16/9;
+                object-fit: cover;
+            }
         }
+    }
+}
 
-        img {
-            height: 10vh; 
-            aspect-ratio: 16/9;
-            margin-top: 2vh;
-            margin-right: 1.5vw;
-            margin-left: 1vw;
-            object-fit: cover;
-        }
+#food {
+    padding: 1.3vh;
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        font-size: 5vh;
+        margin-bottom: 2vh;
+    }
+
+    #video-container {
+        overflow-y: scroll;
     }
 }
 
@@ -282,7 +311,7 @@
     align-items: center;
 
     * {
-        margin: 1.3vh 0;
+        padding: 1.3vh 0;
         font-size: 3vh;
     }
 
