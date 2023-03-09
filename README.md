@@ -18,12 +18,10 @@ I recommend installing the following extensions for vscode:
 ## Editing your page
 Any HTML for your page can be put inside the html file with your page name that
 is in `docs/pages/`, any javascript you need for your page can be put in the js
-file with your page name.  
-The `docs/pages/` ~~currently only has the `hello` and `world` pages to show 
-example execution from one page to another,~~ but you can just add your own page
-files and load that page using `loadPage("yourPageName")`.
-`postcss/styles.css`, just create a selector of your id and put all your page 
-specific css in there.  
+file with your page name in the same place. then you can load that page 
+using `loadPage("yourPageName")`  
+You can put your css in `postcss/styles.css`, just create a selector of your 
+id and put all your page specific css in there.  
 Some options for subpages:
 * Use Zain's method from the lo-fi project, having different div's in the same
 html that you hide or show using javascript.
