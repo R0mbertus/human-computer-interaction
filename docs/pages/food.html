@@ -1,7 +1,45 @@
 <div id="food">
     <h2>Food</h2>
     <div class="search">
+        <input type="text" id="searchInput" placeholder="Search for food">
+        <button onclick="search()">Search</button>
     </div>
     <div id="food-container">
+        <table>
+            <thead>
+              <tr>
+                <th>Food</th>
+                <th>Calories</th>
+                <th>Quantity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="foodTable">
+              <tr>
+                <td>Apple</td>
+                <td>52</td>
+                <td><input type="number" min="0" value="0"></td>
+                <td><button onclick="add(this)">+</button> <button onclick="remove(this)">-</button></td>
+              </tr>
+              <tr>
+                <td>Banana</td>
+                <td>89</td>
+                <td><input type="number" min="0" value="0"></td>
+                <td><button onclick="add(this)">+</button> <button onclick="remove(this)">-</button></td>
+              </tr>
+              <tr>
+                <td>Orange</td>
+                <td>62</td>
+                <td><input type="number" min="0" value="0"></td>
+                <td><button onclick="add(this)">+</button> <button onclick="remove(this)">-</button></td>
+              </tr>
+              <tr>
+                <td>Grapes</td>
+                <td>69</td>
+                <td><input type="number" min="0" value="0"></td>
+                <td><button onclick="add(this)">+</button> <button onclick="remove(this)">-</button></td>
+              </tr>
+            </tbody>
+        </table>
     </div>
 </div>
