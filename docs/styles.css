@@ -35,6 +35,10 @@
         background-color: white;
     }
 
+#top-container #content-container #page-container {
+            height: calc(90vh)
+        }
+
 #navbar {
     height: 8%;
     width: 100%;
@@ -209,28 +213,44 @@
         }
 
 /* Exercise Page styling */
-.video {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 20px;
-}
-.video p {
-        font-size: 10px;
-        margin-top: 2vh;
-        text-align: justify;
-    }
-.video iframe {
-        height: 100px;
-        width: 50%;
-        margin-top: 2vh;
-        margin-right: 20px;
-        margin-left: 5px;
-    }
+#exercise {
+    padding: 1.3vh;
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
 
-.filter {
-    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+#exercise h2 {
+        font-size: 5vh;
+        margin-bottom: 2vh;
+    }
+#exercise #video-container {
+        overflow-y: scroll;
+    }
+#exercise .video {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 2vw;
+    }
+#exercise .video p {
+            font-size: 1.2vh;
+            margin-top: 2vh;
+            text-align: justify;
+        }
+#exercise .video img {
+            height: 10vh; 
+            aspect-ratio: 16/9;
+            margin-top: 2vh;
+            margin-right: 1.5vw;
+            margin-left: 1vw;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
 
 #settings {
     display: flex;
