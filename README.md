@@ -1,6 +1,9 @@
 # human-computer-interaction
 Repo for Human Computer Interaction code @ VU
 
+## Link to website
+https://r0mbertus.github.io/human-computer-interaction/
+
 ## Installation and running the project
 To install the needed dependecies the first timedo `npm install` to setup the 
 project for the first time.  
@@ -18,8 +21,7 @@ is in `docs/pages/`, any javascript you need for your page can be put in the js
 file with your page name.  
 The `docs/pages/` ~~currently only has the `hello` and `world` pages to show 
 example execution from one page to another,~~ but you can just add your own page
-files and add that to the pages array in `docs/index.js` 
-(like `'pages/pagenamehere'`). Any css editing can be done in the 
+files and load that page using `loadPage("yourPageName")`.
 `postcss/styles.css`, just create a selector of your id and put all your page 
 specific css in there.  
 Some options for subpages:
