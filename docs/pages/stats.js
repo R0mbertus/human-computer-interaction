@@ -11,3 +11,9 @@ isElementLoaded("#content-container").then((element) => {
         document.head.appendChild(script);
     }
 });
+
+document.getElementById("steps").innerHTML = `${goals.steps}`;
+document.getElementById("calories").innerHTML = `${goals.calories}`;
+document.getElementById("minutes").innerHTML = `${goals.minutes}`;
+document.getElementById("weight").innerHTML = `${information.weight} ${information.weight_unit}`;
+document.getElementById("weight-goal").innerHTML = `${goals.weight} ${information.weight_unit}`;
