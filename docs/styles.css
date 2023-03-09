@@ -39,6 +39,7 @@
             height: calc(90vh)
         }
 
+/* navbar Styling */
 #navbar {
     height: 8%;
     width: 100%;
@@ -48,7 +49,6 @@
     align-items: space-between;
     
 }
-
 #navbar div {
         height: 100%;
         flex: 1;
@@ -57,22 +57,17 @@
         justify-content: center;
         align-items: center;
     }
-
 #navbar div img {
             height: 80%;
         }
-
 #navbar div {
         
         border: 1px solid darkgray;
 }
-
 /* for some reason doesn't work nested with previous */
-
 #navbar div:hover {
         background-color: lightgray;
     }
-
 #navbar .selected {
         background-color: gray;
     }
@@ -212,6 +207,31 @@
             font-size: 3vh;
         }
 
+/* Stats page styling */
+.progress {
+    width: 100%;
+    height: 20px;
+    background-color: darkgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+  
+.progress-bar {
+    height: 100%;
+    background-color: green;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: black;
+}
+
+
+.stats-style {
+    font-size: 20px;
+    margin-bottom: 20px; 
+    padding: 20px; 
+}
+
 /* Exercise Page styling */
 #exercise {
     padding: 1.3vh;
@@ -334,29 +354,3 @@
             font-size: 3vh;
             margin-bottom: 1vh;
         }
-        
-/* Stats page styling */
-
-.progress {
-    width: 100%;
-    height: 20px;
-    background-color: darkgray;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-  
-.progress-bar {
-    height: 100%;
-    background-color: green;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 20px;
-    color: black;
-}
-
-
-.stats-style {
-    font-size: 20px;
-    margin-bottom: 20px; 
-    padding: 20px; 
-}
