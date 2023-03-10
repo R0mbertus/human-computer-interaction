@@ -1,4 +1,5 @@
 isElementLoaded("#settings").then((settings) => {
+    loadNavbar();
 
     let image = document.createElement("img");
     image.id = "profile-pic";

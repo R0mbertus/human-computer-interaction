@@ -1,7 +1,9 @@
 isElementLoaded("#video-container").then((videoContainer) => {
-    var muscleTypes = ["abdominals", "biceps", "glutes", "hamstrings", "biceps",];
-    var videoIDs = ["3oeimlA6s68", "KzZILhT_YvY", "Q5VSWvZibpQ", "N9_11gKQGqM", "gThC40XCHd4",];
-    var videoDescriptions = [
+    loadNavbar();
+    
+    const muscleTypes = ["abdominals", "biceps", "glutes", "hamstrings", "biceps",];
+    const videoIDs = ["3oeimlA6s68", "KzZILhT_YvY", "Q5VSWvZibpQ", "N9_11gKQGqM", "gThC40XCHd4",];
+    const videoDescriptions = [
         `No equipment needed for this 20 minute at home abs workout.
         These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced
         routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,

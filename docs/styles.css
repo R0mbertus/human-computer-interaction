@@ -36,6 +36,7 @@
     }
 
 #top-container #content-container #page-container {
+            margin: 1.3vh;
             height: calc(90vh)
         }
 
@@ -213,34 +214,37 @@
         }
 
 /* Stats page styling */
-.progress {
-    width: 100%;
-    height: 20px;
-    background-color: darkgray;
-    border-radius: 5px;
-    margin-bottom: 10px;
+#stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-  
-.progress-bar {
-    height: 100%;
-    background-color: green;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 20px;
-    color: black;
-}
-
-
-.stats-style {
-    font-size: 20px;
-    margin-bottom: 20px; 
-    padding: 20px; 
-}
+#stats h2 {
+        font-size: 5vh;
+    }
+#stats .progress {
+        width: 100%;
+        height: 20px;
+        background-color: green;
+        border-radius: 1vh;
+        margin-bottom: 2vh;
+    }
+#stats .progress-bar {
+        height: 100%;
+        background-color: darkgray;
+        border-radius: 1vh;
+        text-align: center;
+        line-height: 20px;
+        color: black;
+    }
+#stats .stats-style {
+        font-size: 20px;
+        margin-bottom: 20px; 
+        padding: 20px; 
+    }
 
 /* Exercise Page styling */
-#exercise {
-    padding: 1.3vh;
-    margin-bottom: 0;
+#exercises {
     height: 100%;
     width: 100%;
 
@@ -248,23 +252,23 @@
     flex-direction: column;
     align-items: center;
 }
-#exercise h2 {
+#exercises h2 {
         font-size: 5vh;
         margin-bottom: 2vh;
     }
-#exercise .filter {
+#exercises .filter {
         font-size: 2vh;
     }
-#exercise .filter select {
+#exercises .filter select {
             font-size: 2vh;
         }
-#exercise #video-container {
+#exercises #video-container {
         overflow-y: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-#exercise #video-container .video {
+#exercises #video-container .video {
             width: 90%;
             display: flex;
             flex-direction: row;
@@ -272,12 +276,12 @@
             margin: 1vh 0.5vw;
             padding: 1vh 0.5vw;
         }
-#exercise #video-container .video p {
+#exercises #video-container .video p {
                 font-size: 1.3vh;
                 text-align: justify;
                 padding-left: 1vw;
             }
-#exercise #video-container .video img {
+#exercises #video-container .video img {
                 height: 10vh; 
                 aspect-ratio: 16/9;
                 -o-object-fit: cover;
@@ -285,7 +289,6 @@
             }
 
 #food {
-    padding: 1.3vh;
     margin-bottom: 0;
     height: 100%;
     width: 100%;
@@ -328,6 +331,7 @@
     }
 
 #settings form {
+        margin: 1.3vh;
         width: 80%; 
         font-size: 3vh;
     }

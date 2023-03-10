@@ -27,13 +27,30 @@ async function isElementLoaded(element) {
     return document.querySelector(element);
 };
 
+// function to load in navbar if not present
+function loadNavbar() {
+    isElementLoaded("#content-container").then((element) => {
+        if (document.querySelector("#navbar") === null) {
+            fetch(`pages/navbar.html`)
+                .then(response => response.text())
+                .then(data => {
+                    element.innerHTML = element.innerHTML + data;
+                });
+
+            const script = document.createElement("script");
+            script.src = `pages/navbar.js`;
+            document.head.appendChild(script);
+        }
+    });
+}
+
 // Global variables
-var account = {
+let account = {
     email: "",
     password: ""
 }
 
-var information = {
+let information = {
     pic: "",
     name: "",
     dateofbirth: "",
@@ -43,7 +60,7 @@ var information = {
     weight_unit: "kg",
 }
 
-var goals = {
+let goals = {
     checked: [false, false, false, false],
     steps: "",
     minutes: "",
@@ -61,11 +78,13 @@ var tasks = [{
     completion: "save-button"
 }]
 
+let totalCalories = parseInt(0);
+
 //Reusable code for info and settings
 function getInfoForm() {
-    let types = ["url", "text", "date", "number", "number"]
-    let ids = ["pic", "name", "dateofbirth", "height", "weight"]
-    let labels = ["Profile Pic", "Name", "DoB", "Height", "Weight"]
+    const types = ["url", "text", "date", "number", "number"]
+    const ids = ["pic", "name", "dateofbirth", "height", "weight"]
+    const labels = ["Profile Pic", "Name", "DoB", "Height", "Weight"]
 
     let info_form = document.createElement("form");
 

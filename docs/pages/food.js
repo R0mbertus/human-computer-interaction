@@ -1,4 +1,7 @@
 isElementLoaded("#food").then((food) => {
+	loadNavbar();
+	document.getElementById("totalCalories").innerHTML = totalCalories;
+
 	let foodList = [  
 		{ name: "Apple", calories: 52 },  
 		{ name: "Banana", calories: 89 },  
@@ -55,7 +58,6 @@ function searchFood() {
 
 function updateCalories() {
 	let table = document.getElementById("foodTable");
-	totalCalories = 0;
 
 	for (let i = 0; i < table.rows.length; i++) {
 		let row = table.rows[i];
