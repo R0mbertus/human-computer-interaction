@@ -213,29 +213,66 @@
         }
 
 /* Stats page styling */
-.progress {
-    width: 100%;
-    height: 20px;
+
+.progress-bar {
     background-color: darkgray;
-    border-radius: 5px;
+    height: 20px;
     margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
 }
   
-.progress-bar {
-    height: 100%;
+.progress {
     background-color: green;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 20px;
-    color: black;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    width: 0;
 }
-
 
 .stats-style {
     font-size: 20px;
     margin-bottom: 20px; 
     padding: 20px; 
 }
+
+/* Style for the bar chart */
+.chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+}
+.bar {
+    width: 20px;
+    background-color: #008000;
+}
+
+/* Style for the list of history table */
+.history {
+    width: 90%;
+    margin: 0 auto;
+}
+.history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.history th, .history td {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.history th {
+    background-color: #f0f0f0;
+}
+
+
 
 /* Exercise Page styling */
 #exercise {
