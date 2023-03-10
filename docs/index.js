@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // change this index to the index of your page to get yours to load first
-    loadPage("signup");
+    loadPage("stats");
 });
 
 // a function to load insert a html page into the #content-container and load
@@ -77,6 +77,23 @@ var tasks = [{
     time: "",
     completion: "save-button"
 }]
+
+var foodList = [  
+    { name: "Apple", calories: 52, quantity: 0 },  
+    { name: "Banana", calories: 89, quantity: 0 },  
+    { name: "Orange", calories: 62, quantity: 0  },  
+    { name: "Grapes", calories: 69, quantity: 0  },  
+    { name: "Strawberry", calories: 33, quantity: 0  },  
+    { name: "Blueberry", calories: 57, quantity: 0  },  
+    { name: "Raspberry", calories: 52, quantity: 0  },  
+    { name: "Pineapple", calories: 82 , quantity: 0 },  
+    { name: "Mango", calories: 99 , quantity: 0 },  
+    { name: "Papaya", calories: 119 , quantity: 0 },  
+    { name: "Watermelon", calories: 30 , quantity: 0 },  
+    { name: "Kiwi", calories: 61 , quantity: 0 },  
+    { name: "Peach", calories: 59 , quantity: 0 },  
+    { name: "Plum", calories: 46 , quantity: 0 },  
+    { name: "Cherry", calories: 50 , quantity: 0 },];
 
 let totalCalories = parseInt(0);
 
