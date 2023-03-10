@@ -213,66 +213,29 @@
         }
 
 /* Stats page styling */
-
-.progress-bar {
-    background-color: darkgray;
-    height: 20px;
-    margin-bottom: 10px;
-    position: relative;
+.progress {
     width: 100%;
-    cursor: pointer;
+    height: 20px;
+    background-color: darkgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
   
-.progress {
-    background-color: green;
+.progress-bar {
     height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: width 0.3s ease-in-out;
-    width: 0;
+    background-color: green;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: black;
 }
+
 
 .stats-style {
     font-size: 20px;
     margin-bottom: 20px; 
     padding: 20px; 
 }
-
-/* Style for the bar chart */
-.chart {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    height: 200px;
-    width: 90%;
-    margin: 20px auto;
-    background-color: #f0f0f0;
-}
-.bar {
-    width: 20px;
-    background-color: #008000;
-}
-
-/* Style for the list of history table */
-.history {
-    width: 90%;
-    margin: 0 auto;
-}
-.history table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.history th, .history td {
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-.history th {
-    background-color: #f0f0f0;
-}
-
-
 
 /* Exercise Page styling */
 #exercise {
@@ -396,3 +359,57 @@
             font-size: 3vh;
             margin-bottom: 1vh;
         }
+
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#instructions .hidden {
+        display:none;
+    }
+
+
+#instructions h1 {
+        font-size: 6vh;
+    }
+
+
+#instructions > * {
+        font-size: 2.5vh;
+        width: 95%;
+    }
+
+
+#instructions div {
+        width: 90%;
+        font-size: 2vh;
+        margin: 2vh;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+#instructions div button {
+            font-size: 2vh;
+            width: 20%;
+        }
+
+
+#instructions > button, #instructions >textarea {
+        width: 90%
+    }
+
+
+#instructions .completed {
+        background-color: red;
+    }
+#form h1 {
+        font-size: 6vh;
+    }
+#form #gform { 
+        display: none;
+    }

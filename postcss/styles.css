@@ -391,3 +391,49 @@
         }
     }
 }
+
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hidden {
+        display:none;
+    }
+    
+    h1 {
+        font-size: 6vh;
+    }
+
+    > * {
+        font-size: 2.5vh;
+        width: 95%;
+    }
+
+    div {
+        width: 90%;
+        font-size: 2vh;
+        margin: 2vh;
+        display: flex;
+        justify-content: space-between;
+        button {
+            font-size: 2vh;
+            width: 20%;
+        }
+    }
+    > button, >textarea {
+        width: 90%
+    }
+    .completed {
+        background-color: red;
+    }
+}
+#form {
+    h1 {
+        font-size: 6vh;
+    }
+
+    #gform { 
+        display: none;
+    }
+}

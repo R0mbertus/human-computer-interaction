@@ -51,6 +51,15 @@ var goals = {
     weight: ""
 }
 
+var tasks = [{
+    description: "Complete the sign-up",
+    time: "",
+    completion: "finish-button"
+}, {
+    description: "Update your settings",
+    time: "",
+    completion: "save-button"
+}]
 
 //Reusable code for info and settings
 function getInfoForm() {
@@ -107,40 +116,40 @@ function getInfoForm() {
 
     isElementLoaded("#height-div").then((height_div) => {
         height_div.querySelector("input").min = 0;
-        (addRadios("cm", "inches", "height")).forEach((e)=>height_div.appendChild(e));
+        (addRadios("cm", "inches", "height")).forEach((e) => height_div.appendChild(e));
     })
 
     isElementLoaded("#weight-div").then((weight_div) => {
         weight_div.querySelector("input").min = 0;
-        (addRadios("kg", "pounds", "weight")).forEach((e)=>weight_div.appendChild(e));
+        (addRadios("kg", "pounds", "weight")).forEach((e) => weight_div.appendChild(e));
     })
     return info_form;
-    
+
     function addRadios(value1, value2, measurement) {
         let input1 = document.createElement("input");
-    
+
         let name = `${measurement}-unit`;
-    
+
         input1.type = "radio";
         input1.id = value1;
         input1.name = name;
         input1.value = value1;
         input1.required = true;
-    
+
         let label1 = document.createElement("label")
         label1.setAttribute("for", name);
         label1.innerHTML = value1;
-    
+
         let input2 = document.createElement("input");
         input2.type = "radio";
         input2.id = value2
         input2.name = name;
         input2.value = value2
-    
+
         let label2 = document.createElement("label")
         label2.setAttribute("for", name);
         label2.innerHTML = value2
-    
+
         if (information[`${measurement}_unit`] == value1) {
             input1.checked = true;
         } else {
@@ -160,3 +169,72 @@ function saveInfo() {
     information.weight_unit = document.querySelector(`input[name="weight-unit"]:checked`).value;
 }
 
+isElementLoaded("#instructions").then((instructions) => {
+    let p = document.createElement("p");
+    p.innerHTML = `There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
+
+    instructions.appendChild(p);
+
+    for (let i = 0; i < tasks.length; i++) {
+        let div = document.createElement("div");
+        div.id = `task-${i}`;
+        div.classList.add("hidden");
+        let desc = document.createElement("p");
+        desc.innerHTML = `${i + 1}. ${tasks[i].description}`;
+        let button = document.createElement("button");
+        button.innerHTML = "Start";
+        let stopwatch = document.createElement("p")
+        stopwatch.classList.add("timers");
+        stopwatch.id = `task-${i}-timer`;
+        stopwatch.innerHTML = "00:00:00";
+        stopwatch.classList.add("hidden");
+        button.addEventListener("click", () => {
+            const startTime = new Date();
+            button.remove();
+            stopwatch.classList.remove("hidden");
+
+            const intervalId = setInterval(function () {
+                const endTime = new Date();
+                updateStopwatch(stopwatch.id, startTime, endTime);
+            }, 1000);
+
+            isElementLoaded(`#${tasks[i].completion}`).then((completion) => {
+                completion.addEventListener("click", () => {
+                    clearInterval(intervalId);
+                    tasks[i].time = stopwatch.innerHTML;
+                    div.classList.add("completed");
+                    if (i != tasks.length - 1) {
+                        document.getElementById(`task-${i + 1}`).classList.remove("hidden");
+                    } else {
+                        let tasks_done = document.createElement("button");
+                        tasks_done.innerHTML = "Finish";
+                        tasks_done.addEventListener("click", () => { 
+                            tasks_done.remove();
+                            let times = document.createElement("textarea");
+                            instructions.appendChild(times);
+                            times.value = tasks.map(object => object.time);
+                            times.select();
+                            document.execCommand("copy");
+                            document.getElementById("gform").id ="";
+                        });
+                        instructions.appendChild(tasks_done);
+                    }
+                });
+            });
+        });
+        div.appendChild(desc);
+        div.appendChild(button);
+        div.appendChild(stopwatch);
+        instructions.appendChild(div)
+    }
+
+    document.getElementById(`task-0`).classList.remove("hidden");
+
+    function updateStopwatch(id, startTime, endTime) {
+        const diff = new Date(endTime - startTime);
+        const hours = diff.getUTCHours().toString().padStart(2, '0');
+        const minutes = diff.getUTCMinutes().toString().padStart(2, '0');
+        const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
+        document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
+    }
+}) 
