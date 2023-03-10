@@ -289,6 +289,13 @@
         margin-bottom: 2vh;
     }
 
+    #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+
     .filter {
         font-size: 2vh;
 
@@ -303,6 +310,10 @@
         flex-direction: column;
         align-items: center;
 
+        .video:hover {
+            background-color: lightgray
+        }
+
         .video {
             width: 90%;
             display: flex;
@@ -310,6 +321,7 @@
             align-items: center;
             margin: 1vh 0.5vw;
             padding: 1vh 0.5vw;
+
     
             p {
                 font-size: 1.3vh;
@@ -323,6 +335,12 @@
                 object-fit: cover;
             }
         }
+
+    }
+    iframe {
+        margin-top: 2vh;
+        width: 95%;
+        aspect-ratio: 16/9;
     }
 }
 

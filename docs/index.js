@@ -45,12 +45,12 @@ function loadNavbar() {
 }
 
 // Global variables
-let account = {
+var account = {
     email: "",
     password: ""
 }
 
-let information = {
+var information = {
     pic: "",
     name: "",
     dateofbirth: "",
@@ -60,7 +60,7 @@ let information = {
     weight_unit: "kg",
 }
 
-let goals = {
+var goals = {
     checked: [false, false, false, false],
     steps: "",
     minutes: "",
@@ -78,24 +78,63 @@ var tasks = [{
     completion: "save-button"
 }]
 
-var foodList = [  
-    { name: "Apple", calories: 52, quantity: 0 },  
-    { name: "Banana", calories: 89, quantity: 0 },  
-    { name: "Orange", calories: 62, quantity: 0  },  
-    { name: "Grapes", calories: 69, quantity: 0  },  
-    { name: "Strawberry", calories: 33, quantity: 0  },  
-    { name: "Blueberry", calories: 57, quantity: 0  },  
-    { name: "Raspberry", calories: 52, quantity: 0  },  
-    { name: "Pineapple", calories: 82 , quantity: 0 },  
-    { name: "Mango", calories: 99 , quantity: 0 },  
-    { name: "Papaya", calories: 119 , quantity: 0 },  
-    { name: "Watermelon", calories: 30 , quantity: 0 },  
-    { name: "Kiwi", calories: 61 , quantity: 0 },  
-    { name: "Peach", calories: 59 , quantity: 0 },  
-    { name: "Plum", calories: 46 , quantity: 0 },  
-    { name: "Cherry", calories: 50 , quantity: 0 },];
+var exercises = [{
+    muscleType: "abdominals",
+    ID: "3oeimlA6s68",
+    description: `No equipment needed for this 20 minute at home abs workout. These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,
+    comments: [],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "biceps",
+    ID: "KzZILhT_YvY",
+    description: `This no repeat bicep blow up includes wide curls, cross body curls, palms up curls and my favourite; hammer curls. Along with variations of curls, there is tempo & range of motion variations and isometrics to really require a lot of work on the biceps.`,
+    comments: [],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "glutes",
+    ID: "Q5VSWvZibpQ",
+    description: `Here are Top 5 Glute Exercises that have helped transform and grow glutes. There is an explanation on how to perform each exercise in detail and what area it targets the most.`,
+    comments: [],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "hamstrings",
+    ID: "N9_11gKQGqM",
+    description: `Hamstrings, glutes, lower back and adductors all targeted in this 15 minute Romanian deadlift focused session! For this workout you will need a pair of dumbbells or one heavier dumbbell/barbell/kettlebell. The dumbbells used for reference are 15 kg each.`,
+    comments: [],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "biceps",
+    ID: "gThC40XCHd4",
+    description: `This biceps, triceps & shoulders workout is an upper body strength session that will have you feeling fierce. A little shorter, slower paced workout but the goal is to increase those weights and challenge yourself with heavier dumbbells.`,
+    comments: [],
+    difficulty: "",
+    calories: ""
+}]
+
+var foodList = [
+    { name: "Apple", calories: 52, quantity: 0 },
+    { name: "Banana", calories: 89, quantity: 0 },
+    { name: "Orange", calories: 62, quantity: 0 },
+    { name: "Grapes", calories: 69, quantity: 0 },
+    { name: "Strawberry", calories: 33, quantity: 0 },
+    { name: "Blueberry", calories: 57, quantity: 0 },
+    { name: "Raspberry", calories: 52, quantity: 0 },
+    { name: "Pineapple", calories: 82, quantity: 0 },
+    { name: "Mango", calories: 99, quantity: 0 },
+    { name: "Papaya", calories: 119, quantity: 0 },
+    { name: "Watermelon", calories: 30, quantity: 0 },
+    { name: "Kiwi", calories: 61, quantity: 0 },
+    { name: "Peach", calories: 59, quantity: 0 },
+    { name: "Plum", calories: 46, quantity: 0 },
+    { name: "Cherry", calories: 50, quantity: 0 },];
 
 let totalCalories = parseInt(0);
+
+
 
 //Reusable code for info and settings
 function getInfoForm() {
@@ -205,6 +244,7 @@ function saveInfo() {
     information.weight_unit = document.querySelector(`input[name="weight-unit"]:checked`).value;
 }
 
+// Task List Code
 isElementLoaded("#instructions").then((instructions) => {
     let p = document.createElement("p");
     p.innerHTML = `There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
@@ -244,14 +284,14 @@ isElementLoaded("#instructions").then((instructions) => {
                     } else {
                         let tasks_done = document.createElement("button");
                         tasks_done.innerHTML = "Finish";
-                        tasks_done.addEventListener("click", () => { 
+                        tasks_done.addEventListener("click", () => {
                             tasks_done.remove();
                             let times = document.createElement("textarea");
                             instructions.appendChild(times);
                             times.value = tasks.map(object => object.time);
                             times.select();
                             document.execCommand("copy");
-                            document.getElementById("gform").id ="";
+                            document.getElementById("gform").id = "";
                         });
                         instructions.appendChild(tasks_done);
                     }

@@ -7,7 +7,7 @@ isElementLoaded("#navbar").then(() => {
         });
 
         if (document.getElementById(button) !== null) {
-            console.log(button);
+            // console.log(button);
             document.querySelector(`#navbar-${button}`).className = "selected";
         }
     }

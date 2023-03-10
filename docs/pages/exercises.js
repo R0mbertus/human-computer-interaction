@@ -1,40 +1,21 @@
 isElementLoaded("#video-container").then((videoContainer) => {
     loadNavbar();
-    
-    const muscleTypes = ["abdominals", "biceps", "glutes", "hamstrings", "biceps",];
-    const videoIDs = ["3oeimlA6s68", "KzZILhT_YvY", "Q5VSWvZibpQ", "N9_11gKQGqM", "gThC40XCHd4",];
-    const videoDescriptions = [
-        `No equipment needed for this 20 minute at home abs workout.
-        These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced
-        routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,
-        `This no repeat bicep blow up includes wide curls, cross body curls, palms up curls and my favourite; hammer
-        curls. Along with variations of curls, there is tempo & range of motion variations and isometrics to really
-        require a lot of work on the biceps.`,
-        `Here are Top 5 Glute Exercises that have helped transform and grow glutes. There is an explanation on how to
-        perform each exercise in detail and what area it targets the most.`,
-        `Hamstrings, glutes, lower back and adductors all targeted in this 15 minute Romanian deadlift focused session!
-        For this workout you will need a pair of dumbbells or one heavier dumbbell/barbell/kettlebell. The dumbbells used
-        for reference are 15 kg each.`,
-        `This biceps, triceps & shoulders workout is an upper body strength session that will have you feeling fierce. A
-        little shorter, slower paced workout but the goal is to increase those weights and challenge yourself with
-        heavier
-        dumbbells.`,
-    ];
 
-    for (const index in muscleTypes) {
+    for (let i = 0; i < exercises.length; i++) {
         const videoDiv = document.createElement("div");
-        videoDiv.classList.add("video", muscleTypes[index]);
+        videoDiv.classList.add("video", exercises[i].muscleType);
         videoDiv.innerHTML = `
-            <image src="https://img.youtube.com/vi/${videoIDs[index]}/hqdefault.jpg" alt="Video Thumbnail"</image>
-            <p>${videoDescriptions[index]}</p>
+            <image src="https://img.youtube.com/vi/${exercises[i].ID}/hqdefault.jpg" alt="Video Thumbnail"</image>
+            <p>${exercises[i].description}</p>
         `;
+        videoDiv.addEventListener("click", () => { createPage(exercises[i]) });
         videoContainer.appendChild(videoDiv);
     }
 
     const filter = document.getElementById('muscles');
     const videos = document.querySelectorAll('.video');
 
-    filter.addEventListener('change', function() {
+    filter.addEventListener('change', function () {
         if (this.value != '') {
             videos.forEach((video) => {
                 video.style.display = 'none';
@@ -46,9 +27,29 @@ isElementLoaded("#video-container").then((videoContainer) => {
             })
         }
         else {
-            videos.forEach(function(video) {
+            videos.forEach(function (video) {
                 video.style.display = 'flex';
             });
-        }        
+        }
     });
+
+    function createPage(exercise) {
+        let page = document.getElementById("exercises");
+        page.innerHTML = "";
+        let back_button = document.createElement("button");
+        back_button.id = "info-back";
+        back_button.innerHTML = "<";
+
+        back_button.addEventListener('click', (e) => {
+            loadPage("exercises");
+        });
+        
+        let video = document.createElement("iframe");
+        video.src = `https://www.youtube.com/embed/${exercise.ID}`
+        video.id = exercise.ID;
+
+        page.appendChild(back_button);
+        page.appendChild(video);
+
+    }
 });

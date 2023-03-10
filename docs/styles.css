@@ -256,6 +256,12 @@
         font-size: 5vh;
         margin-bottom: 2vh;
     }
+#exercises #info-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
 #exercises .filter {
         font-size: 2vh;
     }
@@ -267,7 +273,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
     }
+#exercises #video-container .video:hover {
+            background-color: lightgray
+        }
 #exercises #video-container .video {
             width: 90%;
             display: flex;
@@ -287,6 +297,11 @@
                 -o-object-fit: cover;
                    object-fit: cover;
             }
+#exercises iframe {
+        margin-top: 2vh;
+        width: 95%;
+        aspect-ratio: 16/9;
+    }
 
 #food {
     margin-bottom: 0;
