@@ -307,6 +307,33 @@
         overflow-y: scroll;
     }
 
+#food .search {
+  margin: 2vh 0;
+}
+
+#food #food-container {
+    flex: 1;
+    overflow: auto;
+}
+
+#food table {
+    width: 100%;
+}
+
+
+#food table th, #food table td {
+    padding: 0.4vh 0.4vh; 
+}
+
+#food #calorie-calculation {
+    margin: 1vh;
+    text-align: right;
+}
+
+#food input[type="number"] {
+    border: none;
+} 
+
 #settings {
     display: flex;
     flex-direction: column;
