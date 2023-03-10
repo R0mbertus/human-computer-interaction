@@ -357,12 +357,38 @@
         font-size: 5vh;
         margin-bottom: 2vh;
     }
+    * {
+        font-size: 2vh;
+    }
+    .search {
+        margin: 2vh;
+        display: flex;
+        justify-content: center;
+    }
 
-    #video-container {
-        overflow-y: scroll;
+    #food-container {
+        flex: 1;
+        overflow: auto;
+    }
+    
+    table {
+        width: 100%;
+        th, td {
+            padding: 0.4vh;
+        }
+    }
+    
+    #calorie-calculation {
+        margin: 1vh;
+        text-align: right;
+    }
+
+    input[type="number"] {
+        width: 20vh;
+        border: none;
     }
 }
-
+  
 #settings {
     display: flex;
     flex-direction: column;

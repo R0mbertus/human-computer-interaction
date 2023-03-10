@@ -318,51 +318,54 @@
         margin-bottom: 2vh;
     }
 
-#food #video-container {
-        overflow-y: scroll;
+#food * {
+        font-size: 2vh;
     }
 
 #food .search {
-  margin: 2vh 0;
-}
+        margin: 2vh;
+        display: flex;
+        justify-content: center;
+    }
 
 #food #food-container {
-    flex: 1;
-    overflow: auto;
-}
+        flex: 1;
+        overflow: auto;
+    }
 
 #food table {
-    width: 100%;
-}
+        width: 100%;
+    }
 
 #food table th, #food table td {
-    padding: 0.4vh 0.4vh; 
-}
+            padding: 0.4vh;
+        }
 
 #food #calorie-calculation {
-    margin: 1vh;
-    text-align: right;
-}
+        margin: 1vh;
+        text-align: right;
+    }
 
 #food input[type="number"] {
-    border: none;
-} 
-
+        width: 20vh;
+        border: none;
+    }
+  
 #settings {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+  
 #settings * {
         margin: 1.3vh 0;
         font-size: 3vh;
     }
-
+  
 #settings h2 {
         font-size: 5vh;
     }
-
+  
 #settings img {
         border-radius: 50%;
         width: 50%;
@@ -370,35 +373,35 @@
         -o-object-fit: cover;
            object-fit: cover;
     }
-
+  
 #settings form {
         margin: 1.3vh;
         width: 80%; 
         font-size: 3vh;
     }
-
+  
 #settings form > div {
             margin: 0;
             display: flex; 
         }
-
+  
 #settings form > div label:first-child {
                 width: 35%;
             }
-
+  
 #settings form > div input {
                 width: 65%;
             }
-
+  
 #settings form > div input[type="number"] {
                 width: 20%;
             }
-
+  
 #settings form > div input[type="radio"] {
                 margin-left: 0.5vw;
                 width: 5%;
             }
-
+  
 #settings form button {
             width: 100%;
             font-size: 3vh;
