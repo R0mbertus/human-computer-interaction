@@ -20,7 +20,7 @@ function addRow(food) {
 	nameCell.innerHTML = food.name;
 	calCell.innerHTML = food.calories;
 	qtyCell.innerHTML = `<input type="number" min="0" value="${food.quantity}" disabled>`;
-	actionCell.innerHTML = '<button onclick="add(this)">+</button> <button onclick="remove(this)">-</button>';
+	actionCell.innerHTML = '<button class="back-button box-style" onclick="add(this)">+</button> <button class="back-button box-style" onclick="remove(this)">-</button>';
 }
 
 function searchFood() {

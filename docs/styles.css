@@ -86,6 +86,18 @@
         background-color: gray;
     }
 
+.back-button {
+        border: 1px solid gray;
+        padding: 0;
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+}
+.back-button:hover {
+    background-color: lightgray;
+}
+
 /* signup page Styling */
 #signup {
     height: 100%;
@@ -127,20 +139,14 @@
     flex-direction: column;
     align-items: center;
 }
-#info #info-back {
-        margin: 5% 90% 0 0;
-        width: 3vh;
-        height: 3vh;
-        font-size: 2vh;
-    }
 #info h2 {
-        margin-top: 5vw;
+        margin-top: 5vh;
         width: 90%;
         text-align: center;
     }
 #info form {
         width: 90%;
-        margin: 10vh 0; 
+        margin-top: 10vh; 
         font-size: 3vh;
     }
 #info form div {
@@ -177,14 +183,8 @@
     flex-direction: column;
     align-items: center;
 }
-#goal #info-back {
-        margin: 5% 90% 0 0;
-        width: 3vh;
-        height: 3vh;
-        font-size: 2vh;
-    }
 #goal h2 {
-        margin-top: 5vw;
+        margin-top: 5vh;
         font-size: 5vh;
         width: 90%;
         text-align: center;
@@ -192,7 +192,7 @@
 #goal form {
         width: 90%;
 
-        margin: 10vh 0; 
+        margin-top: 10vh; 
         font-size: 3vh;
 
     }
@@ -272,12 +272,6 @@
             background-color: lightgray;
             cursor: pointer;
         }
-#stats #stats-back {
-        margin: 5% 90% 0 0;
-        width: 3vh;
-        height: 3vh;
-        font-size: 2vh;
-    }
 #stats .chart {
         display: flex;
         justify-content: space-around;
@@ -328,12 +322,6 @@
     flex-direction: column;
     align-items: center;
 }
-#exercises #exercise-back {
-        margin: 5% 90% 0 0;
-        width: 3vh;
-        height: 3vh;
-        font-size: 2vh;
-    }
 #exercises .filter {
         font-size: 2vh;
     }
@@ -345,22 +333,36 @@
         text-align: justify;
         margin: 1.5vh;
     }
+#exercises > p {
+        font-size: 1.8vh;
+    }
 #exercises h3 {
         font-size: 3vh;
+        text-align: center;
+    }
+#exercises .comments-container {
+        width: 95%;
+        diplay: flex;
+        overflow-y: auto;
+    }
+#exercises .comment {
+        /* margin: 2vh 0; */
+        padding: 2vh 0;
+        border-top: 1px solid lightgray;
     }
 #exercises .comment-text {
         font-size: 2vh;
         text-align: left;
-        margin-left: -24vh;
+        /* margin-left: -24vh; */
     }
 #exercises .username {
         font-size: 2vh;
         font-weight: bold;
-        margin: 2vh 0 0 -24vh;
+        /* margin: 2vh 0 0 -24vh; */
     }
 #exercises .timestamp {
         font-size: 1.8vh;
-        margin-left: -24vh;
+        /* margin-left: -24vh; */
     }
 #exercises #video-container {
         overflow-y: auto;
@@ -408,6 +410,10 @@
 
 #food *:not(h2) {
         font-size: 2vh;
+    }
+
+#food .back-button {
+        margin: 0;
     }
 
 #food .search {

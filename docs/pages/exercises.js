@@ -37,7 +37,8 @@ isElementLoaded("#video-container").then((videoContainer) => {
         let page = document.getElementById("exercises");
         page.innerHTML = "";
         let back_button = document.createElement("button");
-        back_button.id = "exercise-back";
+        back_button.classList.add("box-style");
+        back_button.classList.add("back-button");
         back_button.innerHTML = "<";
 
         back_button.addEventListener('click', (e) => {
@@ -63,6 +64,8 @@ isElementLoaded("#video-container").then((videoContainer) => {
         
         let comments_container = document.createElement("div");
         comments_container.classList.add("comments-container");
+        comments_container.classList.add("box-style");
+        comments_container.appendChild(comment_header);
 
         for (let comment of exercise.comments) {
             let comment_div = document.createElement("div");
@@ -91,7 +94,6 @@ isElementLoaded("#video-container").then((videoContainer) => {
         page.appendChild(difficulty);
         page.appendChild(calories);
         page.appendChild(description);
-        page.appendChild(comment_header);
         page.appendChild(comments_container);
     }
 });

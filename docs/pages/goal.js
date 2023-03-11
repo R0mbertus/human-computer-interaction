@@ -5,7 +5,8 @@ isElementLoaded("#goal").then((goal) => {
     let labels = ["Steps/day", "Active Minutes/day", "Calorie Intake/day", "Ideal Weight"]
 
     let back_button = document.createElement("button");
-    back_button.id = "info-back";
+    back_button.classList.add("box-style");
+    back_button.classList.add("back-button");
     back_button.innerHTML = "<";
 
     back_button.addEventListener('click', (e) => {

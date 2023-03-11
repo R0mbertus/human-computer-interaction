@@ -22,7 +22,8 @@ isElementLoaded("#stats-container").then((stats) => {
         let page = document.getElementById("stats");
         page.innerHTML = "";
         let back_button = document.createElement("button");
-        back_button.id = "stats-back";
+        back_button.classList.add("box-style");
+        back_button.classList.add("back-button");
         back_button.innerHTML = "<";
 
         back_button.addEventListener('click', (e) => {
@@ -38,11 +39,13 @@ isElementLoaded("#stats-container").then((stats) => {
 
         let chart = document.createElement("div");
         chart.classList.add("chart");
+        chart.classList.add("box-style");
 
         let chart_labels = document.createElement("div");
         chart_labels.classList.add("chart-labels");
 
         let table = document.createElement("table");
+        table.classList.add("box-style");
 
         for (let i = 0; i < history.length; i++) {
             chart.innerHTML +=
