@@ -118,8 +118,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Easy",
+    calories: "2300"
 }, {
     muscleType: "biceps",
     ID: "KzZILhT_YvY",
@@ -128,8 +128,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Medium",
+    calories: "3000"
 }, {
     muscleType: "glutes",
     ID: "Q5VSWvZibpQ",
@@ -138,8 +138,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Hard",
+    calories: "5500"
 }, {
     muscleType: "hamstrings",
     ID: "N9_11gKQGqM",
@@ -148,8 +148,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Easy",
+    calories: "3200"
 }, {
     muscleType: "biceps",
     ID: "gThC40XCHd4",
@@ -158,8 +158,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Medium",
+    calories: "4000"
 }, {
     muscleType: "hamstrings",
     ID: "9N3kVU_tj7s",
@@ -168,8 +168,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Hard",
+    calories: "4750"
 }, {
     muscleType: "abdominals",
     ID: "r57BaAtFPKc",
@@ -178,8 +178,8 @@ var exercises = [{
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
-    difficulty: "",
-    calories: ""
+    difficulty: "Medium",
+    calories: "3500"
 }]
 
 var foodList = [
