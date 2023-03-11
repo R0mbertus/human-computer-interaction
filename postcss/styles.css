@@ -315,6 +315,27 @@
         }
     }
 
+    #description {
+        font-size: 2vh;
+        text-align: justify;
+        margin: 1.5vh 1.5vh 1.5vh 1.5vh;
+    }
+
+    .comment-text {
+        text-align: left;
+        margin-left: -24vh;
+    }
+
+    .username {
+        font-weight: bold;
+        margin: 2vh 0 0 -24vh;
+    }
+
+    .timestamp {
+        font-size: small;
+        margin-left: -24vh;
+    }
+
     #video-container {
         overflow-y: auto;
         display: flex;

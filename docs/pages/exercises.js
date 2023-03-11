@@ -48,8 +48,42 @@ isElementLoaded("#video-container").then((videoContainer) => {
         video.src = `https://www.youtube.com/embed/${exercise.ID}`
         video.id = exercise.ID;
 
+        let description = document.createElement("p");
+        description.innerHTML = exercise.description;
+        description.setAttribute("id", "description");
+        
+        let comment_header = document.createElement("h3");
+        comment_header.innerHTML = "Comments";
+        
+        let comments_container = document.createElement("div");
+        comments_container.classList.add("comments-container");
+
+        for (let comment of exercise.comments) {
+            let comment_div = document.createElement("div");
+            comment_div.classList.add("comment");
+
+            let username = document.createElement("p");
+            username.innerHTML = comment.username;
+            username.classList.add("username");
+
+            let timestamp = document.createElement("p");
+            timestamp.innerHTML = new Date(comment.timestamp).toLocaleString();
+            timestamp.classList.add("timestamp");
+
+            let text = document.createElement("p");
+            text.innerHTML = comment.text;
+            text.classList.add("comment-text");
+
+            comment_div.appendChild(username);
+            comment_div.appendChild(timestamp);
+            comment_div.appendChild(text);
+            comments_container.appendChild(comment_div);
+        }
+
         page.appendChild(back_button);
         page.appendChild(video);
-
+        page.appendChild(description);
+        page.appendChild(comment_header);
+        page.appendChild(comments_container);
     }
 });

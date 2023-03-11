@@ -89,35 +89,70 @@ var exercises = [{
     muscleType: "abdominals",
     ID: "3oeimlA6s68",
     description: `No equipment needed for this 20 minute at home abs workout. These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,
-    comments: [],
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
     difficulty: "",
     calories: ""
 }, {
     muscleType: "biceps",
     ID: "KzZILhT_YvY",
     description: `This no repeat bicep blow up includes wide curls, cross body curls, palms up curls and my favourite; hammer curls. Along with variations of curls, there is tempo & range of motion variations and isometrics to really require a lot of work on the biceps.`,
-    comments: [],
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
     difficulty: "",
     calories: ""
 }, {
     muscleType: "glutes",
     ID: "Q5VSWvZibpQ",
     description: `Here are Top 5 Glute Exercises that have helped transform and grow glutes. There is an explanation on how to perform each exercise in detail and what area it targets the most.`,
-    comments: [],
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
     difficulty: "",
     calories: ""
 }, {
     muscleType: "hamstrings",
     ID: "N9_11gKQGqM",
     description: `Hamstrings, glutes, lower back and adductors all targeted in this 15 minute Romanian deadlift focused session! For this workout you will need a pair of dumbbells or one heavier dumbbell/barbell/kettlebell. The dumbbells used for reference are 15 kg each.`,
-    comments: [],
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
     difficulty: "",
     calories: ""
 }, {
     muscleType: "biceps",
     ID: "gThC40XCHd4",
     description: `This biceps, triceps & shoulders workout is an upper body strength session that will have you feeling fierce. A little shorter, slower paced workout but the goal is to increase those weights and challenge yourself with heavier dumbbells.`,
-    comments: [],
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "hamstrings",
+    ID: "9N3kVU_tj7s",
+    description: `This workout is just perfect as part of your at home training to tighten and strengthen your legs. Quality over quantity here is best and try to think about the hamstring muscles contracting or lengthening during them movements.`,
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
+    difficulty: "",
+    calories: ""
+}, {
+    muscleType: "abdominals",
+    ID: "r57BaAtFPKc",
+    description: `Target and activate your deep core muscles with this 10 minute home workout. Make sure to take a deep breathe in and tighten all your abdominal and core muscles. Keep that tension while doing these exercises. That's what makes it hard and effective!`,
+    comments: [ 
+        { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
+        { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
+    ],
     difficulty: "",
     calories: ""
 }]
