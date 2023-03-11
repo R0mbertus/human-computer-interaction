@@ -26,6 +26,7 @@ isElementLoaded("#settings").then((settings) => {
     settings.appendChild(image);
     settings.appendChild(greeting);
     settings.appendChild(settings_form)
+    settings_form.classList.add("box-style")
 
     function updateContent() {
         greeting.innerHTML = `Hello, ${information.name}!`;

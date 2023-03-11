@@ -4,6 +4,11 @@ Repo for Human Computer Interaction code @ VU
 ## Link to website
 https://r0mbertus.github.io/human-computer-interaction/
 
+## IMPORTANT
+* Put your css in `postcss/styles.css`, not `docs/styles.css`
+* run `npm run watch` to have the postcss autocompile down to css
+* **ALWAYS** fetch before doing anything
+
 ## Installation and running the project
 To install the needed dependecies the first timedo `npm install` to setup the 
 project for the first time.  

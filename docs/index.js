@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // change this index to the index of your page to get yours to load first
-    loadPage("signup");
+    loadPage("stats");
 });
 
 // a function to load insert a html page into the #content-container and load
@@ -78,6 +78,13 @@ var tasks = [{
     completion: "save-button"
 }]
 
+const randomPercentage = [
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100),
+    Math.floor(Math.random() * 100)
+]
+
 var exercises = [{
     muscleType: "abdominals",
     ID: "3oeimlA6s68",
@@ -133,8 +140,6 @@ var foodList = [
     { name: "Cherry", calories: 50, quantity: 0 },];
 
 let totalCalories = parseInt(0);
-
-
 
 //Reusable code for info and settings
 function getInfoForm() {
