@@ -47,7 +47,7 @@
 
         #page-container {
             margin: 1.3vh;
-            height: calc(90vh)
+            height: calc(89vh);
         }
     }
 }
@@ -493,7 +493,7 @@
 
     form {
         margin: 1.3vh;
-        width: 80%; 
+        width: 90%; 
         font-size: 3vh;
 
         > div {
