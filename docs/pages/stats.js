@@ -3,27 +3,68 @@ isElementLoaded("#stats-container").then((stats) => {
 
     const statIDs = ["steps", "calories", "activity", "sleep"];
 
-    for (const index in statIDs) {
-        stats.innerHTML = stats.innerHTML += 
-        `<div id="${statIDs[index]}-stat" class="box-style">
-            <p>Daily ${statIDs[index]} goal: ${goals[statIDs[index]]}</p>
-            <div id="${statIDs[index]}-progress" class="progress-bar">
-                <div class="progress" style="width: ${randomPercentage[index]}%">${randomPercentage[index]}%</div>
-            </div>
-        </div>`
+    for (let i = 0; i < statistics.length; i++) {
+        let statDiv = document.createElement("div");
+        statDiv.id = `${statistics[i].stat}-stat`
+        statDiv.classList.add("box-style", "stats-box");
+        statDiv.innerHTML =
+            `<p>${statistics[i].desc}:</p>
+            <div id="${statistics[i].stat}-progress" class="progress-bar">
+                <div class="progress" style="width: ${statistics[i].percentage}%">${statistics[i].percentage}%</div>
+            </div>`
+        stats.appendChild(statDiv);
+        statDiv.addEventListener("click", () => { createPage(statistics[i]) })
     }
 
-    document.addEventListener('click', function(event) {
-        for (const statID of statIDs) {
-            const statElem = document.querySelector(`#${statID}-stat`);
-            if (statElem && statElem.contains(event.target)) {
-                loadPage(`stats-subpages/${statID}`);
-            }
+    let days = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thur", "Fri"]
+
+    function createPage(statistic) {
+        let page = document.getElementById("stats");
+        page.innerHTML = "";
+        let back_button = document.createElement("button");
+        back_button.id = "stats-back";
+        back_button.innerHTML = "<";
+
+        back_button.addEventListener('click', (e) => {
+            loadPage("stats");
+        });
+
+        let heading = document.createElement("h3");
+        heading.innerHTML = `${statistic.desc} this Week`
+
+        let history = statistic.history
+        //largest value for relative bar chart height
+        const largestValue = history.reduce((max, obj) => obj.value > max ? obj.value : max, -Infinity);
+
+        let chart = document.createElement("div");
+        chart.classList.add("chart");
+
+        let chart_labels = document.createElement("div");
+        chart_labels.classList.add("chart-labels");
+
+        let table = document.createElement("table");
+
+        for (let i = 0; i < history.length; i++) {
+            chart.innerHTML +=
+                `<div class="bar" style="height: ${(20 * history[i].value) / largestValue}vh;"><span>${history[i].value}</span></div>`;
+            chart_labels.innerHTML +=
+                `<span>${days[i]}</span>`;
+
+            let tr = document.createElement("tr");
+            tr.innerHTML =
+                `<td>${history[i].date}</td><td>${history[i].value}</td>`
+            table.prepend(tr);
         }
-        
-        // if (event.target.matches('#steps-stat, #calories-stat, #activity-stat, #sleep-stat')) {
-        //     const statID = event.target.id.split('-')[0];
-            
-        // }
-    });
+
+        page.appendChild(back_button);
+        page.appendChild(heading);
+        page.appendChild(chart);
+        page.appendChild(chart_labels);
+        page.appendChild(table);
+    }
+
+
+
+
 });
+

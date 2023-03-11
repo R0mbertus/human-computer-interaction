@@ -270,6 +270,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        .stats-box {
+            padding: 2.5vh;
+        }
         
         .progress-bar {
             margin-top: 1vh;
@@ -292,6 +296,54 @@
             cursor: pointer;
         }
     }
+
+    #stats-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+    .chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 21vh;
+        width: 90%;
+        margin: 2vh auto;
+        background-color: #f0f0f0;
+        span {
+            font-size: 2vh;
+        }
+    }
+    .bar {
+        width: 3vh;
+        background-color: #008000;
+    }
+
+    .chart-labels {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        width: 90%;
+        span {
+            font-size: 2vh;
+            width: 13%;
+        }
+    }
+    table {
+        margin-top: 5vh;
+        width: 90%;
+        border-collapse: collapse;
+        td {
+            font-size: 3vh;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 1vh;
+        }
+        td:first-child {
+            width: 60%;
+        }
+    }
 }
 
 /* Exercise Page styling */
@@ -305,7 +357,7 @@
 
     
 
-    #info-back {
+    #exercise-back {
         margin: 5% 90% 0 0;
         width: 3vh;
         height: 3vh;
