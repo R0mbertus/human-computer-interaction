@@ -79,6 +79,7 @@
     /* for some reason doesn't work nested with previous */
     div:hover {
         background-color: lightgray;
+        cursor: pointer;
     }
 
     .selected {
@@ -286,6 +287,10 @@
                 border-radius: 1vh;
             }
         }
+        > div:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
     }
 }
 
@@ -322,7 +327,8 @@
         align-items: center;
 
         .video:hover {
-            background-color: lightgray
+            background-color: lightgray;
+            cursor: pointer;
         }
 
         .video {
@@ -480,7 +486,7 @@
         width: 90%
     }
     .completed {
-        background-color: red;
+        background-color: lime;
     }
 }
 #form {
