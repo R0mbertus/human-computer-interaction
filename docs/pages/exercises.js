@@ -37,7 +37,7 @@ isElementLoaded("#video-container").then((videoContainer) => {
         let page = document.getElementById("exercises");
         page.innerHTML = "";
         let back_button = document.createElement("button");
-        back_button.id = "info-back";
+        back_button.id = "exercise-back";
         back_button.innerHTML = "<";
 
         back_button.addEventListener('click', (e) => {

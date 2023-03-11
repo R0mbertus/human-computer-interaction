@@ -263,6 +263,52 @@
             background-color: lightgray;
             cursor: pointer;
         }
+#stats #stats-back {
+        margin: 5% 90% 0 0;
+        width: 3vh;
+        height: 3vh;
+        font-size: 2vh;
+    }
+#stats .chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 21vh;
+        width: 90%;
+        margin: 2vh auto;
+        background-color: #f0f0f0;
+    }
+#stats .chart span {
+            font-size: 2vh;
+        }
+#stats .bar {
+        width: 3vh;
+        background-color: #008000;
+    }
+#stats .chart-labels {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        width: 90%;
+    }
+#stats .chart-labels span {
+            font-size: 2vh;
+            width: 13%;
+        }
+#stats table {
+        margin-top: 5vh;
+        width: 90%;
+        border-collapse: collapse;
+    }
+#stats table td {
+            font-size: 3vh;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 1vh;
+        }
+#stats table td:first-child {
+            width: 60%;
+        }
 
 /* Exercise Page styling */
 #exercises {
@@ -273,7 +319,7 @@
     flex-direction: column;
     align-items: center;
 }
-#exercises #info-back {
+#exercises #exercise-back {
         margin: 5% 90% 0 0;
         width: 3vh;
         height: 3vh;

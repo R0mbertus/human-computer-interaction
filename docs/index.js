@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // change this index to the index of your page to get yours to load first
-    loadPage("signup");
+    loadPage("stats");
 });
 
 // a function to load insert a html page into the #content-container and load
@@ -84,6 +84,28 @@ const randomPercentage = [
     Math.floor(Math.random() * 100),
     Math.floor(Math.random() * 100)
 ]
+
+var statistics = [{
+    stat: "steps",
+    desc: "Steps",
+    percentage: Math.floor(Math.random() * 100),
+    history: [{ date: "2023-03-03", value: 10000 }, { date: "2023-03-04", value: 8500 }, { date: "2023-03-05", value: 9200 }, { date: "2023-03-06", value: 7800 }, { date: "2023-03-07", value: 11000 }, { date: "2023-03-08", value: 9500 }, { date: "2023-03-09", value: 9800 }]
+}, {
+    stat: "calories",
+    desc: "Calorie Intake",
+    percentage: Math.floor(Math.random() * 100),
+    history: [{ date: "2023-03-03", value: 2500 }, { date: "2023-03-04", value: 1900 }, { date: "2023-03-05", value: 2700 }, { date: "2023-03-06", value: 2300 }, { date: "2023-03-07", value: 2000 }, { date: "2023-03-08", value: 2600 }, { date: "2023-03-09", value: 1900 }]
+}, {
+    stat: "active-minutes",
+    desc: "Active Minutes",
+    percentage: Math.floor(Math.random() * 100),
+    history: [{ date: "2023-03-03", value: 60 }, { date: "2023-03-04", value: 70 }, { date: "2023-03-05", value: 50 }, { date: "2023-03-06", value: 60 }, { date: "2023-03-07", value: 40 }, { date: "2023-03-08", value: 50 }, { date: "2023-03-09", value: 20 }]
+}, {
+    stat: "sleep",
+    desc: "Sleep",
+    percentage: Math.floor(Math.random() * 100),
+    history: [{ date: "2023-03-03", value: 8 }, { date: "2023-03-04", value: 7 }, { date: "2023-03-05", value: 8 }, { date: "2023-03-06", value: 6 }, { date: "2023-03-07", value: 7 }, { date: "2023-03-08", value: 7 }, { date: "2023-03-09", value: 5 }]
+}]
 
 var exercises = [{
     muscleType: "abdominals",
