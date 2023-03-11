@@ -17,6 +17,7 @@ isElementLoaded("#goal").then((goal) => {
     title.innerHTML = "Please choose your Goals"
 
     let goal_form = document.createElement("form");
+    goal_form.classList.add("box-style");
 
     for (let i = 0; i < ids.length; i++) {
         let div = document.createElement("div");

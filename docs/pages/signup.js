@@ -4,6 +4,7 @@ isElementLoaded("#signup").then((signup) => {
     img.alt = "App logo"
 
     let signup_form = document.createElement("form");
+    signup_form.classList.add("box-style");
 
     let email_input = document.createElement("input");
     email_input.type = "email";

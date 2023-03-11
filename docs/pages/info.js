@@ -13,6 +13,7 @@ isElementLoaded("#info").then((info) => {
     title.innerHTML = "Please enter the following details"
 
     let info_form = getInfoForm();
+    info_form.classList.add("box-style");
 
     let next_button = document.createElement("button");
     next_button.id = "next-button";

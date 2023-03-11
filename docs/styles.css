@@ -88,22 +88,26 @@
 
 /* signup page Styling */
 #signup {
-    display:flex;
-    flex-wrap: wrap;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 #signup img {
         height: 50vh;
+        margin-top: 8vh;
     }
 #signup h1 {
-        width:100%;
+        width: 100%;
         text-align: center;
         border-bottom: 1px solid black;
     }
 #signup form {
-        height: 40vh;
-        width: 80%;
+        margin: 8vh 0;
+        padding: 3vh;
+        width: 90%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -117,9 +121,10 @@
 
 /* Info page Styling */
 #info {
-    display:flex;
+    height: 100%;
+
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
 }
 #info #info-back {
@@ -130,12 +135,11 @@
     }
 #info h2 {
         margin-top: 5vw;
-        font-size: 5vh;
         width: 90%;
         text-align: center;
     }
 #info form {
-        width: 80%;
+        width: 90%;
         margin: 10vh 0; 
         font-size: 3vh;
     }
@@ -167,9 +171,10 @@
 
 /* Goals Page styling */
 #goal {
+    height: 100%;
+
     display:flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
 }
 #goal #info-back {
@@ -185,7 +190,8 @@
         text-align: center;
     }
 #goal form {
-        width: 80%;
+        width: 90%;
+
         margin: 10vh 0; 
         font-size: 3vh;
 
@@ -193,7 +199,7 @@
 #goal form > div {
             display: flex;
             justify-content: space-between;
-            margin: 4vh 0;
+            margin: 3vh 0;
         }
 #goal form > div * {
                 font-size: 3vh;
