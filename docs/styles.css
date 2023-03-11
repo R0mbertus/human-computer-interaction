@@ -80,6 +80,7 @@
 /* for some reason doesn't work nested with previous */
 #navbar div:hover {
         background-color: lightgray;
+        cursor: pointer;
     }
 #navbar .selected {
         background-color: gray;
@@ -258,6 +259,10 @@
                 background-color: green;
                 border-radius: 1vh;
             }
+#stats #stats-container > div:hover {
+            background-color: lightgray;
+            cursor: pointer;
+        }
 
 /* Exercise Page styling */
 #exercises {
@@ -304,7 +309,8 @@
         align-items: center;
     }
 #exercises #video-container .video:hover {
-            background-color: lightgray
+            background-color: lightgray;
+            cursor: pointer;
         }
 #exercises #video-container .video {
             width: 90%;
@@ -471,7 +477,7 @@
 
 
 #instructions .completed {
-        background-color: red;
+        background-color: lime;
     }
 #form h1 {
         font-size: 6vh;
