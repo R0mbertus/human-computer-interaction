@@ -270,6 +270,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
+        .stats-box {
+            padding: 2.5vh;
+        }
         
         .progress-bar {
             margin-top: 1vh;

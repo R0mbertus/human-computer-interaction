@@ -6,7 +6,7 @@ isElementLoaded("#stats-container").then((stats) => {
     for (let i = 0; i < statistics.length; i++) {
         let statDiv = document.createElement("div");
         statDiv.id = `${statistics[i].stat}-stat`
-        statDiv.classList.add("box-style");
+        statDiv.classList.add("box-style", "stats-box");
         statDiv.innerHTML =
             `<p>${statistics[i].desc}:</p>
             <div id="${statistics[i].stat}-progress" class="progress-bar">

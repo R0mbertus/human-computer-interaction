@@ -34,7 +34,10 @@ function loadNavbar() {
             fetch(`pages/navbar.html`)
                 .then(response => response.text())
                 .then(data => {
-                    element.innerHTML = element.innerHTML + data;
+                    const navbar = document.createElement("div");
+                    navbar.id = "navbar";
+                    navbar.innerHTML = data;
+                    element.appendChild(navbar);
                 });
 
             const script = document.createElement("script");

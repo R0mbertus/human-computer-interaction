@@ -244,6 +244,9 @@
         flex-direction: column;
         justify-content: space-around;
     }
+#stats #stats-container .stats-box {
+            padding: 2.5vh;
+        }
 #stats #stats-container .progress-bar {
             margin-top: 1vh;
 
