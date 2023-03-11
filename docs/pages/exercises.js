@@ -3,7 +3,7 @@ isElementLoaded("#video-container").then((videoContainer) => {
 
     for (let i = 0; i < exercises.length; i++) {
         const videoDiv = document.createElement("div");
-        videoDiv.classList.add("video", exercises[i].muscleType);
+        videoDiv.classList.add("video", exercises[i].muscleType, "box-style");
         videoDiv.innerHTML = `
             <image src="https://img.youtube.com/vi/${exercises[i].ID}/hqdefault.jpg" alt="Video Thumbnail"</image>
             <p>${exercises[i].description}</p>
