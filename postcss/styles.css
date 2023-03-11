@@ -381,21 +381,27 @@
     #description {
         font-size: 2vh;
         text-align: justify;
-        margin: 1.5vh 1.5vh 1.5vh 1.5vh;
+        margin: 1.5vh;
+    }
+    
+    h3 {
+        font-size: 3vh;
     }
 
     .comment-text {
+        font-size: 2vh;
         text-align: left;
         margin-left: -24vh;
     }
 
     .username {
+        font-size: 2vh;
         font-weight: bold;
         margin: 2vh 0 0 -24vh;
     }
 
     .timestamp {
-        font-size: small;
+        font-size: 1.8vh;
         margin-left: -24vh;
     }
 
