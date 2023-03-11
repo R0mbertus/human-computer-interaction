@@ -48,6 +48,12 @@ isElementLoaded("#video-container").then((videoContainer) => {
         video.src = `https://www.youtube.com/embed/${exercise.ID}`
         video.id = exercise.ID;
 
+        let difficulty = document.createElement("p");
+        difficulty.innerHTML = `Difficulty: ${exercise.difficulty}`;
+    
+        let calories = document.createElement("p");
+        calories.innerHTML = `Calories Burned: ${exercise.calories}`;
+
         let description = document.createElement("p");
         description.innerHTML = exercise.description;
         description.setAttribute("id", "description");
@@ -82,6 +88,8 @@ isElementLoaded("#video-container").then((videoContainer) => {
 
         page.appendChild(back_button);
         page.appendChild(video);
+        page.appendChild(difficulty);
+        page.appendChild(calories);
         page.appendChild(description);
         page.appendChild(comment_header);
         page.appendChild(comments_container);
