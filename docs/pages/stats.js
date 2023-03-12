@@ -1,8 +1,6 @@
 isElementLoaded("#stats-container").then((stats) => {
     loadNavbar();
 
-    const statIDs = ["steps", "calories", "activity", "sleep"];
-
     for (let i = 0; i < statistics.length; i++) {
         let statDiv = document.createElement("div");
         statDiv.id = `${statistics[i].stat}-stat`

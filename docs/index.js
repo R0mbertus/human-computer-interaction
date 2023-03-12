@@ -81,13 +81,6 @@ var tasks = [{
     completion: "save-button"
 }]
 
-const randomPercentage = [
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100),
-    Math.floor(Math.random() * 100)
-]
-
 var statistics = [{
     stat: "steps",
     desc: "Steps",
@@ -105,7 +98,7 @@ var statistics = [{
     history: [{ date: "2023-03-03", value: 60 }, { date: "2023-03-04", value: 70 }, { date: "2023-03-05", value: 50 }, { date: "2023-03-06", value: 60 }, { date: "2023-03-07", value: 40 }, { date: "2023-03-08", value: 50 }, { date: "2023-03-09", value: 20 }]
 }, {
     stat: "sleep",
-    desc: "Sleep",
+    desc: "Sleep Hours",
     percentage: Math.floor(Math.random() * 100),
     history: [{ date: "2023-03-03", value: 8 }, { date: "2023-03-04", value: 7 }, { date: "2023-03-05", value: 8 }, { date: "2023-03-06", value: 6 }, { date: "2023-03-07", value: 7 }, { date: "2023-03-08", value: 7 }, { date: "2023-03-09", value: 5 }]
 }]

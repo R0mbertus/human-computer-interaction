@@ -276,7 +276,7 @@
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
-        height: 21vh;
+        height: 23vh;
         width: 90%;
         margin: 2vh auto;
         background-color: #f0f0f0;
@@ -342,7 +342,7 @@
     }
 #exercises .comments-container {
         width: 95%;
-        diplay: flex;
+        display: flex;
         overflow-y: auto;
     }
 #exercises .comment {
