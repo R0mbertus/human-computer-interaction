@@ -85,7 +85,7 @@ var tasks = [{
     description: "Start a glutes exercise video using the filter",
     time: "",
     intervalId: "",
-    completion: ""
+    completion: "Q5VSWvZibpQ"
 }, {
     description: "Using the search functionality on the food page, add 3 mangoes and 2 cucumbers to your calorie intake",
     time: "",
@@ -374,12 +374,23 @@ isElementLoaded("#instructions").then((instructions) => {
         instructions.appendChild(div)
     }
 
+    function updateStopwatch(id, startTime, endTime) {
+        const diff = new Date(endTime - startTime);
+        const hours = diff.getUTCHours().toString().padStart(2, '0');
+        const minutes = diff.getUTCMinutes().toString().padStart(2, '0');
+        const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
+        document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Task 1 specific
     document.getElementById(`task-1`).classList.remove("hidden");
 
+
+    // Task 2 specific
     let task_2 = document.getElementById(`task-2`);
     let input = document.createElement("input");
     let button_2 = document.getElementById('task-2-button');
-    button_2.addEventListener("click", ()=> {
+    button_2.addEventListener("click", () => {
         task_2.insertBefore(input, task_2.children[1]);
     })
     input.addEventListener("keyup", () => {
@@ -394,14 +405,23 @@ isElementLoaded("#instructions").then((instructions) => {
         }
     })
 
+    // Task 3 specific
+    let task_3 = document.getElementById(`task-3`);
+    isElementLoaded(`#${tasks[2].completion}`).then((completion) => {
+        let page = document.getElementById("exercises");
+        let button = document.createElement("button");
+        button.innerHTML = "Click me to complete!";
+        page.insertBefore(button, page.children[4])
+        button.addEventListener("click", () => {
+            console.log("hello");
+            clearInterval([tasks[2].intervalId]);
+            tasks[2].time = task_3.querySelector('#task-3-timer').innerHTML;
+            task_3.classList.add("completed");
+            document.getElementById(`task-4`).classList.remove("hidden");
+            addBlocker();
+        })
+    });
 
-    function updateStopwatch(id, startTime, endTime) {
-        const diff = new Date(endTime - startTime);
-        const hours = diff.getUTCHours().toString().padStart(2, '0');
-        const minutes = diff.getUTCMinutes().toString().padStart(2, '0');
-        const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
-        document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
-    }
 });
 
 function hideBlocker() {
@@ -409,6 +429,8 @@ function hideBlocker() {
     blocker.classList.add("hidden");
     let content = document.getElementById("page-container");
     content.classList.remove("blur");
+    let navbar = document.getElementById("navbar");
+    navbar.classList.remove("blur");
 }
 
 function addBlocker() {
@@ -416,4 +438,7 @@ function addBlocker() {
     blocker.classList.remove("hidden");
     let content = document.getElementById("page-container");
     content.classList.add("blur");
+    isElementLoaded("#navbar").then((element) => {
+        element.classList.add("blur");
+    });
 }

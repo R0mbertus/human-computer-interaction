@@ -164,6 +164,7 @@
     }
 
     form {
+        padding: 3vh;
         width: 90%;
         margin-top: 10vh; 
         font-size: 3vh;
@@ -196,7 +197,7 @@
         
         button {
             width: 100%;
-            margin-top: 5vh;
+            margin: 5vh 0 2vh 0;
             font-size: 3vh;
         }
     }
@@ -219,7 +220,7 @@
 
     form {
         width: 90%;
-
+        padding: 3vh;
         margin-top: 10vh; 
         font-size: 3vh;
 
@@ -262,7 +263,7 @@
 
         button {
             width: 100%;
-            margin-top: 5vh;
+            margin: 5vh 0 2vh 0 ;
             font-size: 3vh;
         }
 
@@ -392,6 +393,7 @@
         width: 95%;
         display: flex;
         overflow-y: auto;
+        flex-direction: column;
     }
 
     .comment {
