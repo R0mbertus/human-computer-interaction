@@ -413,7 +413,6 @@ isElementLoaded("#instructions").then((instructions) => {
         button.innerHTML = "Click me to complete!";
         page.insertBefore(button, page.children[4])
         button.addEventListener("click", () => {
-            console.log("hello");
             clearInterval([tasks[2].intervalId]);
             tasks[2].time = task_3.querySelector('#task-3-timer').innerHTML;
             task_3.classList.add("completed");

@@ -50,6 +50,15 @@ function updateCalories() {
 		totalCalories += qty * cal;
 	}
 	
+    let task_4 = document.getElementById(`task-4`);
+	if (totalCalories == 329) {
+		clearInterval([tasks[3].intervalId]);
+		tasks[3].time = task_4.querySelector('#task-4-timer').innerHTML;
+		task_4.classList.add("completed");
+		document.getElementById(`task-5`).classList.remove("hidden");
+		addBlocker();
+	}
+
 	document.getElementById("totalCalories").innerHTML = totalCalories;
 }
 
