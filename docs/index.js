@@ -197,7 +197,20 @@ var foodList = [
     { name: "Kiwi", calories: 61, quantity: 0 },
     { name: "Peach", calories: 59, quantity: 0 },
     { name: "Plum", calories: 46, quantity: 0 },
-    { name: "Cherry", calories: 50, quantity: 0 },];
+    { name: "Cherry", calories: 50, quantity: 0 },
+    { name: "Lemon", calories: 29, quantity: 0 },
+    { name: "Lime", calories: 20, quantity: 0 },
+    { name: "Cucumber", calories: 16, quantity: 0 },
+    { name: "Tomato", calories: 18, quantity: 0 },
+    { name: "Potato", calories: 77, quantity: 0 },
+    { name: "Carrot", calories: 41, quantity: 0 },
+    { name: "Onion", calories: 40, quantity: 0 },
+    { name: "Garlic", calories: 149, quantity: 0 },
+    { name: "Spinach", calories: 23, quantity: 0 },
+    { name: "Broccoli", calories: 34, quantity: 0 },
+    { name: "Cauliflower", calories: 25, quantity: 0 },
+    { name: "Cabbage", calories: 25, quantity: 0 },
+    { name: "Mushroom", calories: 22, quantity: 0 },];
 
 let totalCalories = parseInt(0);
 
