@@ -320,11 +320,12 @@ isElementLoaded("#instructions").then((instructions) => {
     let p = document.createElement("p");
     p.innerHTML = `There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
 
+
     instructions.appendChild(p);
 
     for (let i = 0; i < tasks.length; i++) {
         let div = document.createElement("div");
-        div.id = `task-${i}`;
+        div.id = `task-${i+1}`;
         div.classList.add("hidden");
         let desc = document.createElement("p");
         desc.innerHTML = `${i + 1}. ${tasks[i].description}`;
@@ -339,6 +340,7 @@ isElementLoaded("#instructions").then((instructions) => {
             const startTime = new Date();
             button.remove();
             stopwatch.classList.remove("hidden");
+            hideBlocker();
 
             const intervalId = setInterval(function () {
                 const endTime = new Date();
@@ -351,7 +353,7 @@ isElementLoaded("#instructions").then((instructions) => {
                     tasks[i].time = stopwatch.innerHTML;
                     div.classList.add("completed");
                     if (i != tasks.length - 1) {
-                        document.getElementById(`task-${i + 1}`).classList.remove("hidden");
+                        document.getElementById(`task-${i + 2}`).classList.remove("hidden");
                     } else {
                         let tasks_done = document.createElement("button");
                         tasks_done.innerHTML = "Finish";
@@ -375,7 +377,7 @@ isElementLoaded("#instructions").then((instructions) => {
         instructions.appendChild(div)
     }
 
-    document.getElementById(`task-0`).classList.remove("hidden");
+    document.getElementById(`task-1`).classList.remove("hidden");
 
     function updateStopwatch(id, startTime, endTime) {
         const diff = new Date(endTime - startTime);
@@ -385,3 +387,14 @@ isElementLoaded("#instructions").then((instructions) => {
         document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
     }
 }) 
+
+
+function hideBlocker() {
+    let blocker = document.getElementById("blocker");
+    blocker.classList.add("hidden");
+}
+
+function addBlocker() {
+    let blocker = document.getElementById("blocker");
+    blocker.classList.remove("hidden");
+}

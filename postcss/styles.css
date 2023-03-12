@@ -31,7 +31,8 @@
     #instructions,
     #form {
         height: 100%;
-        flex: 1;
+        z-index: 6; 
+        flex: 1;    
     }
 
     #content-container {
@@ -89,15 +90,24 @@
 }
 
 .back-button {
-        border: 1px solid gray;
-        padding: 0;
-        margin: 5% 90% 0 0;
-        width: 3vh;
-        height: 3vh;
-        font-size: 2vh;
+    border: 1px solid gray;
+    padding: 0;
+    margin: 5% 90% 0 0;
+    width: 3vh;
+    height: 3vh;
+    font-size: 2vh;
 }
 .back-button:hover {
     background-color: lightgray;
+}
+
+#blocker {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* signup page Styling */
@@ -542,14 +552,15 @@
     }
 }
 
+.hidden {
+    display: none !important;
+}
 
 #instructions {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .hidden {
-        display:none;
-    }
+
     
     h1 {
         font-size: 6vh;
