@@ -79,6 +79,14 @@ isElementLoaded("#goal").then((goal) => {
     finish_button.addEventListener('click', (e) => {
         if (goal_form.checkValidity()) {
             e.preventDefault();
+
+            let task_1 = document.getElementById(`task-1`);
+            clearInterval([tasks[0].intervalId]);
+            tasks[0].time = task_1.querySelector('#task-1-timer').innerHTML;
+            task_1.classList.add("completed");
+            document.getElementById(`task-2`).classList.remove("hidden");
+            addBlocker();
+
             saveInfo();
             loadPage("stats");
         }

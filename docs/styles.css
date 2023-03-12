@@ -39,7 +39,6 @@
 #top-container #content-container {
         height: 100%;
         aspect-ratio: 9/16;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -52,6 +51,10 @@
             margin: 1.3vh;
             height: calc(89vh);
         }
+
+#top-container .blur {
+        filter: blur(1vh);  
+    }
 
 /* navbar Styling */
 #navbar {

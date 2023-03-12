@@ -72,13 +72,30 @@ var goals = {
 }
 
 var tasks = [{
-    description: "Complete the sign-up",
+    description: "Complete the sign-up process and add your goals",
     time: "",
+    intervalId: "",
     completion: "finish-button"
 }, {
-    description: "Update your settings",
+    description: "Find the value of calorie intake on the 6th of March",
     time: "",
-    completion: "save-button"
+    intervalId: "",
+    completion: ""
+}, {
+    description: "Start a glutes exercise video using the filter",
+    time: "",
+    intervalId: "",
+    completion: ""
+}, {
+    description: "Using the search functionality on the food page, add 3 mangoes and 2 cucumbers to your calorie intake",
+    time: "",
+    intervalId: "",
+    completion: ""
+}, {
+    description: "Update your name on the settings page",
+    time: "",
+    intervalId: "",
+    completion: ""
 }]
 
 var statistics = [{
@@ -107,7 +124,7 @@ var exercises = [{
     muscleType: "abdominals",
     ID: "3oeimlA6s68",
     description: `No equipment needed for this 20 minute at home abs workout. These movements are all different each performed for 50 seconds, 10 seconds brief rest. This is a slow paced routine to really encourage that extra focus on lower back flat on mat and core braced throughout.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -117,7 +134,7 @@ var exercises = [{
     muscleType: "biceps",
     ID: "KzZILhT_YvY",
     description: `This no repeat bicep blow up includes wide curls, cross body curls, palms up curls and my favourite; hammer curls. Along with variations of curls, there is tempo & range of motion variations and isometrics to really require a lot of work on the biceps.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -127,7 +144,7 @@ var exercises = [{
     muscleType: "glutes",
     ID: "Q5VSWvZibpQ",
     description: `Here are Top 5 Glute Exercises that have helped transform and grow glutes. There is an explanation on how to perform each exercise in detail and what area it targets the most.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -137,7 +154,7 @@ var exercises = [{
     muscleType: "hamstrings",
     ID: "N9_11gKQGqM",
     description: `Hamstrings, glutes, lower back and adductors all targeted in this 15 minute Romanian deadlift focused session! For this workout you will need a pair of dumbbells or one heavier dumbbell/barbell/kettlebell. The dumbbells used for reference are 15 kg each.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -147,7 +164,7 @@ var exercises = [{
     muscleType: "biceps",
     ID: "gThC40XCHd4",
     description: `This biceps, triceps & shoulders workout is an upper body strength session that will have you feeling fierce. A little shorter, slower paced workout but the goal is to increase those weights and challenge yourself with heavier dumbbells.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -157,7 +174,7 @@ var exercises = [{
     muscleType: "hamstrings",
     ID: "9N3kVU_tj7s",
     description: `This workout is just perfect as part of your at home training to tighten and strengthen your legs. Quality over quantity here is best and try to think about the hamstring muscles contracting or lengthening during them movements.`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -167,7 +184,7 @@ var exercises = [{
     muscleType: "abdominals",
     ID: "r57BaAtFPKc",
     description: `Target and activate your deep core muscles with this 10 minute home workout. Make sure to take a deep breathe in and tighten all your abdominal and core muscles. Keep that tension while doing these exercises. That's what makes it hard and effective!`,
-    comments: [ 
+    comments: [
         { username: "user1", timestamp: "2023-03-10T08:00:00Z", text: "Great workout!" },
         { username: "user2", timestamp: "2023-03-11T09:30:00Z", text: "This was too easy for me." }
     ],
@@ -203,7 +220,8 @@ var foodList = [
     { name: "Broccoli", calories: 34, quantity: 0 },
     { name: "Cauliflower", calories: 25, quantity: 0 },
     { name: "Cabbage", calories: 25, quantity: 0 },
-    { name: "Mushroom", calories: 22, quantity: 0 },];
+    { name: "Mushroom", calories: 22, quantity: 0 }
+];
 
 let totalCalories = parseInt(0);
 
@@ -320,12 +338,11 @@ isElementLoaded("#instructions").then((instructions) => {
     let p = document.createElement("p");
     p.innerHTML = `There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
 
-
     instructions.appendChild(p);
 
     for (let i = 0; i < tasks.length; i++) {
         let div = document.createElement("div");
-        div.id = `task-${i+1}`;
+        div.id = `task-${i + 1}`;
         div.classList.add("hidden");
         let desc = document.createElement("p");
         desc.innerHTML = `${i + 1}. ${tasks[i].description}`;
@@ -333,7 +350,7 @@ isElementLoaded("#instructions").then((instructions) => {
         button.innerHTML = "Start";
         let stopwatch = document.createElement("p")
         stopwatch.classList.add("timers");
-        stopwatch.id = `task-${i}-timer`;
+        stopwatch.id = `task-${i+1}-timer`;
         stopwatch.innerHTML = "00:00:00";
         stopwatch.classList.add("hidden");
         button.addEventListener("click", () => {
@@ -347,29 +364,8 @@ isElementLoaded("#instructions").then((instructions) => {
                 updateStopwatch(stopwatch.id, startTime, endTime);
             }, 1000);
 
-            isElementLoaded(`#${tasks[i].completion}`).then((completion) => {
-                completion.addEventListener("click", () => {
-                    clearInterval(intervalId);
-                    tasks[i].time = stopwatch.innerHTML;
-                    div.classList.add("completed");
-                    if (i != tasks.length - 1) {
-                        document.getElementById(`task-${i + 2}`).classList.remove("hidden");
-                    } else {
-                        let tasks_done = document.createElement("button");
-                        tasks_done.innerHTML = "Finish";
-                        tasks_done.addEventListener("click", () => {
-                            tasks_done.remove();
-                            let times = document.createElement("textarea");
-                            instructions.appendChild(times);
-                            times.value = tasks.map(object => object.time);
-                            times.select();
-                            document.execCommand("copy");
-                            document.getElementById("gform").id = "";
-                        });
-                        instructions.appendChild(tasks_done);
-                    }
-                });
-            });
+            tasks[i].intervalId = intervalId;
+
         });
         div.appendChild(desc);
         div.appendChild(button);
@@ -386,15 +382,19 @@ isElementLoaded("#instructions").then((instructions) => {
         const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
         document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
     }
-}) 
+})
 
 
 function hideBlocker() {
     let blocker = document.getElementById("blocker");
     blocker.classList.add("hidden");
+    let content = document.getElementById("page-container");
+    content.classList.remove("blur");
 }
 
 function addBlocker() {
     let blocker = document.getElementById("blocker");
     blocker.classList.remove("hidden");
+    let content = document.getElementById("page-container");
+    content.classList.add("blur");
 }
