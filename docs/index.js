@@ -49,17 +49,17 @@ function loadNavbar() {
 
 // Global variables
 var account = {
-    email: "",
-    password: ""
+    email: "zain@dumb.com",
+    password: "122345682"
 }
 
 var information = {
     pic: "",
-    name: "",
-    dateofbirth: "",
-    height: "",
+    name: "z",
+    dateofbirth: "2003-11-11",
+    height: "1",
     height_unit: "cm",
-    weight: "",
+    weight: "1",
     weight_unit: "kg",
 }
 
@@ -348,9 +348,10 @@ isElementLoaded("#instructions").then((instructions) => {
         desc.innerHTML = `${i + 1}. ${tasks[i].description}`;
         let button = document.createElement("button");
         button.innerHTML = "Start";
+        button.id = `task-${i + 1}-button`;
         let stopwatch = document.createElement("p")
         stopwatch.classList.add("timers");
-        stopwatch.id = `task-${i+1}-timer`;
+        stopwatch.id = `task-${i + 1}-timer`;
         stopwatch.innerHTML = "00:00:00";
         stopwatch.classList.add("hidden");
         button.addEventListener("click", () => {
@@ -375,6 +376,25 @@ isElementLoaded("#instructions").then((instructions) => {
 
     document.getElementById(`task-1`).classList.remove("hidden");
 
+    let task_2 = document.getElementById(`task-2`);
+    let input = document.createElement("input");
+    let button_2 = document.getElementById('task-2-button');
+    button_2.addEventListener("click", ()=> {
+        task_2.insertBefore(input, task_2.children[1]);
+    })
+    input.addEventListener("keyup", () => {
+        if (input.value == 2300) {
+            input.remove();
+
+            clearInterval([tasks[1].intervalId]);
+            tasks[1].time = task_2.querySelector('#task-2-timer').innerHTML;
+            task_2.classList.add("completed");
+            document.getElementById(`task-3`).classList.remove("hidden");
+            addBlocker();
+        }
+    })
+
+
     function updateStopwatch(id, startTime, endTime) {
         const diff = new Date(endTime - startTime);
         const hours = diff.getUTCHours().toString().padStart(2, '0');
@@ -382,8 +402,7 @@ isElementLoaded("#instructions").then((instructions) => {
         const seconds = diff.getUTCSeconds().toString().padStart(2, '0');
         document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
     }
-})
-
+});
 
 function hideBlocker() {
     let blocker = document.getElementById("blocker");

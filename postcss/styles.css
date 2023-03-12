@@ -590,6 +590,10 @@
     .completed {
         background-color: lime;
     }
+
+    input {
+        width: 8vh;
+    }
 }
 #form {
     h1 {

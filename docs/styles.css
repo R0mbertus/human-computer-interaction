@@ -550,6 +550,10 @@
 #instructions .completed {
         background-color: lime;
     }
+
+#instructions input {
+        width: 8vh;
+    }
 #form h1 {
         font-size: 6vh;
     }
