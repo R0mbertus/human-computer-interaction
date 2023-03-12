@@ -90,7 +90,7 @@ var tasks = [{
     description: "Using the search functionality on the food page, add 3 mangoes and 2 cucumbers to your calorie intake",
     time: "",
     intervalId: "",
-    completion: ""
+    completion: true,
 }, {
     description: "Update your name on the settings page",
     time: "",
@@ -419,6 +419,8 @@ isElementLoaded("#instructions").then((instructions) => {
             task_3.classList.add("completed");
             document.getElementById(`task-4`).classList.remove("hidden");
             addBlocker();
+
+            tasks[3].completion = false;
         })
     });
 

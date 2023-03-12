@@ -51,7 +51,8 @@ function updateCalories() {
 	}
 	
     let task_4 = document.getElementById(`task-4`);
-	if (totalCalories == 329) {
+	if (totalCalories == 329 && tasks[3].completion == false) {
+		tasks[3].completion = true;
 		clearInterval([tasks[3].intervalId]);
 		tasks[3].time = task_4.querySelector('#task-4-timer').innerHTML;
 		task_4.classList.add("completed");
