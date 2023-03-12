@@ -378,7 +378,7 @@
 
     .comments-container {
         width: 95%;
-        diplay: flex;
+        display: flex;
         overflow-y: auto;
     }
 
