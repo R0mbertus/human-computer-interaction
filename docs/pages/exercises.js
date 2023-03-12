@@ -46,7 +46,7 @@ isElementLoaded("#video-container").then((videoContainer) => {
         });
         
         let video = document.createElement("iframe");
-        video.src = `https://www.youtube.com/embed/${exercise.ID}`
+        video.src = `https://www.youtube.com/embed/${exercise.ID}?&mute=1`
         video.id = exercise.ID;
 
         let difficulty = document.createElement("p");
