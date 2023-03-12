@@ -457,6 +457,11 @@
         width: 95%;
         aspect-ratio: 16/9;
     }
+
+    button {
+        font-size: 1.5vh;
+        color: red;
+    }
 }
 
 #food {
@@ -594,15 +599,13 @@
     }
 
     input {
+        font-size: 1.5vh;
         width: 8vh;
+        height: 2vh;
     }
 }
 #form {
     h1 {
         font-size: 6vh;
-    }
-
-    #gform { 
-        display: none;
     }
 }

@@ -49,17 +49,17 @@ function loadNavbar() {
 
 // Global variables
 var account = {
-    email: "zain@dumb.com",
-    password: "122345682"
+    email: "",
+    password: ""
 }
 
 var information = {
     pic: "",
-    name: "z",
-    dateofbirth: "2003-11-11",
-    height: "1",
+    name: "",
+    dateofbirth: "",
+    height: "",
     height_unit: "cm",
-    weight: "1",
+    weight: "",
     weight_unit: "kg",
 }
 
@@ -95,7 +95,7 @@ var tasks = [{
     description: "Update your name on the settings page",
     time: "",
     intervalId: "",
-    completion: ""
+    completion: false
 }]
 
 var statistics = [{
@@ -413,6 +413,7 @@ isElementLoaded("#instructions").then((instructions) => {
         button.innerHTML = "Click me to complete!";
         page.insertBefore(button, page.children[4])
         button.addEventListener("click", () => {
+            button.remove();
             clearInterval([tasks[2].intervalId]);
             tasks[2].time = task_3.querySelector('#task-3-timer').innerHTML;
             task_3.classList.add("completed");
@@ -428,8 +429,9 @@ function hideBlocker() {
     blocker.classList.add("hidden");
     let content = document.getElementById("page-container");
     content.classList.remove("blur");
-    let navbar = document.getElementById("navbar");
-    navbar.classList.remove("blur");
+    isElementLoaded("#navbar").then((element) => {
+        element.classList.remove("blur");
+    });
 }
 
 function addBlocker() {

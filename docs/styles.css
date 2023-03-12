@@ -413,6 +413,10 @@
         width: 95%;
         aspect-ratio: 16/9;
     }
+#exercises button {
+        font-size: 1.5vh;
+        color: red;
+    }
 
 #food {
     height: 100%;
@@ -554,11 +558,10 @@
     }
 
 #instructions input {
+        font-size: 1.5vh;
         width: 8vh;
+        height: 2vh;
     }
 #form h1 {
         font-size: 6vh;
-    }
-#form #gform { 
-        display: none;
     }
