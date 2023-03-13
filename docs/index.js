@@ -85,7 +85,7 @@ var tasks = [{
     description: "Start a glutes exercise video using the filter",
     time: "",
     intervalId: "",
-    completion: "Q5VSWvZibpQ"
+    completion: true,
 }, {
     description: "Using the search functionality on the food page, add 3 mangoes and 2 cucumbers to your calorie intake",
     time: "",
@@ -402,28 +402,9 @@ isElementLoaded("#instructions").then((instructions) => {
             task_2.classList.add("completed");
             document.getElementById(`task-3`).classList.remove("hidden");
             addBlocker();
+            tasks[2].completion = false;
         }
     })
-
-    // Task 3 specific
-    let task_3 = document.getElementById(`task-3`);
-    isElementLoaded(`#${tasks[2].completion}`).then((completion) => {
-        let page = document.getElementById("exercises");
-        let button = document.createElement("button");
-        button.innerHTML = "Click me to complete!";
-        page.insertBefore(button, page.children[4])
-        button.addEventListener("click", () => {
-            button.remove();
-            clearInterval([tasks[2].intervalId]);
-            tasks[2].time = task_3.querySelector('#task-3-timer').innerHTML;
-            task_3.classList.add("completed");
-            document.getElementById(`task-4`).classList.remove("hidden");
-            addBlocker();
-
-            tasks[3].completion = false;
-        })
-    });
-
 });
 
 function hideBlocker() {

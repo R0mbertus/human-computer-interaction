@@ -44,24 +44,24 @@ isElementLoaded("#video-container").then((videoContainer) => {
         back_button.addEventListener('click', (e) => {
             loadPage("exercises");
         });
-        
+
         let video = document.createElement("iframe");
         video.src = `https://www.youtube.com/embed/${exercise.ID}?&mute=1`
         video.id = exercise.ID;
 
         let difficulty = document.createElement("p");
         difficulty.innerHTML = `Difficulty: ${exercise.difficulty}`;
-    
+
         let calories = document.createElement("p");
         calories.innerHTML = `Calories Burned: ${exercise.calories}`;
 
         let description = document.createElement("p");
         description.innerHTML = exercise.description;
         description.setAttribute("id", "description");
-        
+
         let comment_header = document.createElement("h3");
         comment_header.innerHTML = "Comments";
-        
+
         let comments_container = document.createElement("div");
         comments_container.classList.add("comments-container");
         comments_container.classList.add("box-style");
@@ -95,5 +95,23 @@ isElementLoaded("#video-container").then((videoContainer) => {
         page.appendChild(calories);
         page.appendChild(description);
         page.appendChild(comments_container);
+
+        if (tasks[2].completion == false && exercise.ID == "Q5VSWvZibpQ") {
+            let task_3 = document.getElementById(`task-3`);
+            let button = document.createElement("button");
+            button.innerHTML = "Click me to complete!";
+            page.insertBefore(button, page.children[4])
+            button.addEventListener("click", () => {
+                button.remove();
+                clearInterval([tasks[2].intervalId]);
+                tasks[2].time = task_3.querySelector('#task-3-timer').innerHTML;
+                task_3.classList.add("completed");
+                document.getElementById(`task-4`).classList.remove("hidden");
+                addBlocker();
+                tasks[2].completion = true;
+                tasks[3].completion = false;
+            })
+        }
+
     }
 });

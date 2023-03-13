@@ -98,6 +98,7 @@
     width: 3vh;
     height: 3vh;
     font-size: 2vh;
+    color: black !important;
 }
 .back-button:hover {
     background-color: lightgray;
