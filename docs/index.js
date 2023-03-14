@@ -382,8 +382,23 @@ isElementLoaded("#instructions").then((instructions) => {
         document.getElementById(id).textContent = `${hours}:${minutes}:${seconds}`;
     }
 
+    //ethical concern form
+    let ethical_div = document.createElement("div");
+    let ethical_p = document.createElement("p");
+    ethical_p.innerHTML = `Please fill out the first page of the google form (ethical consent form) before pressing "Start Experiment".`
+    ethical_div.appendChild(ethical_p);
+    let start_button = document.createElement("button");
+    start_button.innerHTML = "Start Experiment"
+    ethical_div.appendChild(start_button);
+    instructions.appendChild(ethical_div);
+
+    start_button.addEventListener("click", () => {
+        ethical_div.remove();
+        document.getElementById("gform").classList.add("hidden");
+        document.getElementById(`task-1`).classList.remove("hidden");
+    })
+
     // Task 1 specific
-    document.getElementById(`task-1`).classList.remove("hidden");
 
 
     // Task 2 specific

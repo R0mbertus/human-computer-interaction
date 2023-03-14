@@ -29,6 +29,7 @@ isElementLoaded("#settings").then((settings) => {
                 let instructions = document.getElementById("instructions");
                 let tasks_done = document.createElement("button");
                 tasks_done.innerHTML = "Finish";
+                tasks_done.id = "finish-button";
                 tasks_done.addEventListener("click", () => {
                     tasks_done.remove();
                     let times = document.createElement("textarea");
