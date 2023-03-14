@@ -336,7 +336,7 @@ function saveInfo() {
 // Task List Code
 isElementLoaded("#instructions").then((instructions) => {
     let p = document.createElement("p");
-    p.innerHTML = `There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
+    p.innerHTML = `Welcome to our HCI Experiment!<br>There are ${tasks.length} total tasks. Each task will have it's own timer and start button. Please press the start button and then complete the task. After it's complete, the next one will appear and so on. Once all of them are complete, a finish button will appear which will copy your times and  make the google form visible.`
 
     instructions.appendChild(p);
 
@@ -385,7 +385,7 @@ isElementLoaded("#instructions").then((instructions) => {
     //ethical concern form
     let ethical_div = document.createElement("div");
     let ethical_p = document.createElement("p");
-    ethical_p.innerHTML = `Please fill out the first page of the google form (ethical consent form) before pressing "Start Experiment".`
+    ethical_p.innerHTML = `Please fill out ethical consent form (the first page of the google form) before pressing "Start Experiment".`
     ethical_div.appendChild(ethical_p);
     let start_button = document.createElement("button");
     start_button.innerHTML = "Start Experiment"
