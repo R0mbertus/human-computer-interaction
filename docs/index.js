@@ -95,7 +95,7 @@ var tasks = [{
     description: "Update your name on the settings page",
     time: "",
     intervalId: "",
-    completion: false
+    completion: true
 }]
 
 var statistics = [{

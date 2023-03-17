@@ -58,6 +58,7 @@ function updateCalories() {
 		task_4.classList.add("completed");
 		document.getElementById(`task-5`).classList.remove("hidden");
 		addBlocker();
+		tasks[4].completion = false;
 	}
 
 	document.getElementById("totalCalories").innerHTML = totalCalories;
